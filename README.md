@@ -1,2 +1,2 @@
-# Space-Invaders-D.R.
+# SpaceInvaders
 Space Invaders Game
