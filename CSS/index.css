@@ -1,0 +1,16 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+}
+/* Ponme en el body como imagen de fondo la una url */
+body {
+    background-image: url("Img/space-pixel-art.gif");
+    /* Para que la imagen se adapte al tamaño de la pantalla */
+    background-size: cover;
+    /* Para que la imagen se vea en todos los tamaños de pantalla */
+    background-repeat: no-repeat;
+    /* Para que la imagen se vea centrada en la pantalla */
+    background-position: center;
+    /* Para que la imagen se pueda hacer zoom */
+    background-attachment: fixed;
+    color: white;
+}
