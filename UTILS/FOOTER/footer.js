@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("../UTILS/navbar.html")
+    fetch("../UTILS/FOOTER/footer.html")
       .then((response) => response.text())
       .then((data) => {
-        document.getElementById("navbar").innerHTML = data;
+        document.getElementById("footer").innerHTML = data;
       });
   });
