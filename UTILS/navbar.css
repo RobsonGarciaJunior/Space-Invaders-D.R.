@@ -31,14 +31,12 @@ header .logo {
 }
 
 .logo a:hover {
-    color: violet;
+    color: rgb(21, 241, 32);
 }
 
 header img {
-    width: 50%;
-    /* Tamaño del logo en el header */
+    width: 40%;
     height: auto;
-    /* Se adapta al tamaño del contenido */
 }
 
 .rankingButton {
@@ -49,10 +47,10 @@ header img {
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
-    width: 10%;
-    height: 30%;
-    text-align: center;
+    width: 150px;
     text-decoration: none;
+    align-self: center;
+    text-align: center;
 }
 
 .rankingButton:hover {

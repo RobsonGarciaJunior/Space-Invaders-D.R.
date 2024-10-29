@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("Img/spacep.png");
+    background-image: url("../SOURCE/spacep.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,9 +13,9 @@ body {
 }
 
 .container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100dvh;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 /* _________________________CABECERA_________________________ */
