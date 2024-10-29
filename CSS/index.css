@@ -1,16 +1,134 @@
-*{
+* {
     font-family: 'Press Start 2P', cursive;
 }
-/* Ponme en el body como imagen de fondo la una url */
+
 body {
-    background-image: url("Img/space-pixel-art.gif");
-    /* Para que la imagen se adapte al tamaño de la pantalla */
+    background-image: url("Img/spacep.png");
     background-size: cover;
-    /* Para que la imagen se vea en todos los tamaños de pantalla */
     background-repeat: no-repeat;
-    /* Para que la imagen se vea centrada en la pantalla */
     background-position: center;
-    /* Para que la imagen se pueda hacer zoom */
     background-attachment: fixed;
     color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+}
+
+/* _________________________CABECERA_________________________ */
+header {
+    display: flex;
+    justify-content: space-between;
+    border: 4px solid #2094c2;
+    padding: 10px;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+header .logo {
+    text-decoration: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 10%;
+    height: auto;
+}
+
+.logo :nth-child(2) {
+    font-size: 25px;
+    color: white;
+    max-width: fit-content;
+}
+
+.logo a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: violet;
+}
+
+header img {
+    width: 100%;
+    /* Tamaño del logo en el header */
+    height: auto;
+    /* Se adapta al tamaño del contenido */
+}
+
+.rankingButton {
+    border: 4px solid #00ff00;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+
+/* _________________________MAIN_________________________ */
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    grid-row: 2;
+    align-items: center;
+}
+
+.gameImg {
+    max-width: 10%;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    grid-row: 2;
+    align-items: center;
+}
+
+.buttonGroup button {
+    border: 4px solid #00ff00;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.buttonGroup {
+    /* Para agrupar los botones en una sola línea */
+    display: flex;
+    /* Para que sean en línea */
+    justify-content: space-around;
+    /* Para que se alineen horizontalmente */
+    align-items: center;
+    /* Para que se alineen verticalmente */
+}
+
+
+/*_________________________FOOTER_________________________*/
+
+footer {
+    border: 4px solid #00ff00;
+    /* Borde verde brillante */
+    padding: 10px;
+    /* Alineándola a la derecha */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo negro semi-transparente */
+    color: #ffffff;
+    /* Color del texto en blanco */
+    font-family: 'Press Start 2P', cursive;
+    /* Fuente de estilo retro */
+    font-size: 14px;
+    /* Tamaño de fuente */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    /* Sombra para el texto */
 }
