@@ -16,6 +16,10 @@ body {
     margin: auto;
     display: flex;
     flex-flow: column wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+    min-height: 100dvh;
+    /* Empuja el footer al fondo */
 }
 
 /* _________________________CABECERA_________________________ */
@@ -26,8 +30,8 @@ body {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    grid-row: 2;
     align-items: center;
+    flex-grow: 1;
 }
 
 .gameImg {
