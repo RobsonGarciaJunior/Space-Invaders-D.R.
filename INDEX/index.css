@@ -1,9 +1,10 @@
 * {
     font-family: 'Press Start 2P', cursive;
+    margin: 0;
 }
 
 body {
-    background-image: url("Img/spacep.png");
+    background-image: url("../SOURCE/spacep.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -18,12 +19,13 @@ body {
 }
 
 /* _________________________CABECERA_________________________ */
-header {
+#navbar {
     display: flex;
     justify-content: space-between;
     border: 4px solid #2094c2;
     padding: 10px;
     color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
@@ -68,8 +70,10 @@ header img {
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    width: 10%;
+    height: 30%;
+    align-self: center;
 }
-
 
 /* _________________________MAIN_________________________ */
 
@@ -89,7 +93,6 @@ header img {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    grid-row: 2;
     align-items: center;
 }
 
@@ -101,6 +104,8 @@ header img {
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    width: 10%;
+    height: 30%;
 }
 
 .buttonGroup {
