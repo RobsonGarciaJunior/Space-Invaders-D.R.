@@ -7,6 +7,10 @@ var usuarios = [
     { imagen: 'https://via.placeholder.com/50', nombre: 'María Sánchez', puntuacion: 95, fecha: '2023-10-30', region: 'África' }
 ];
 
+let usuariosJSON = JSON.stringify(usuarios);
+
+localStorage.setItem("usuarios", usuariosJSON);
+
 let ordenAscendente = { nombre: true, puntuacion: true, fecha: true };
 
 function crearTabla() {
