@@ -10,16 +10,16 @@ body {
     background-position: center;
     background-attachment: fixed;
     color: white;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
+    margin: auto;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-flow: column wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+    min-height: 100dvh;
+    /* Empuja el footer al fondo */
 }
 
 /* _________________________CABECERA_________________________ */

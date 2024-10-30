@@ -13,16 +13,18 @@
 header .logo {
     text-decoration: none;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     align-items: center;
-    width: 10%;
+    justify-content: space-between;
+    max-width: fit-content;
     height: auto;
+    border: 1PX salmon solid;
 }
 
 .logo :nth-child(2) {
-    font-size: 25px;
+    font-size: 15px;
     color: white;
-    max-width: fit-content;
+    width: 100%;
 }
 
 .logo a:link {

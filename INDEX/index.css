@@ -1,27 +1,3 @@
-* {
-    font-family: 'Press Start 2P', cursive;
-    margin: 0;
-}
-
-body {
-    background-image: url("../SOURCE/spacep.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-}
-
-.container {
-    margin: auto;
-    display: flex;
-    flex-flow: column wrap;
-    flex-grow: 1;
-    justify-content: space-between;
-    min-height: 100dvh;
-    /* Empuja el footer al fondo */
-}
-
 /* _________________________CABECERA_________________________ */
 
 /* _________________________MAIN_________________________ */
@@ -63,7 +39,25 @@ body {
     /* Para que se alineen horizontalmente */
     align-items: center;
     /* Para que se alineen verticalmente */
+    gap: 30px;   
 }
 
+.sessionButton {
+    border: 4px solid #00ff00;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    width: 150px;
+    text-decoration: none;
+    align-self: center;
+    text-align: center;
+}
 
+.sessionButton:hover {
+    background-color: #00ff00;
+    color: #000000;
+}
 /*_________________________FOOTER_________________________*/
