@@ -4,60 +4,44 @@
 
 .main {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-flow: column nowrap;
     align-items: center;
     flex-grow: 1;
 }
 
 .gameImg {
-    max-width: 10%;
+    transition: all 0.3s ease;
 }
 
 .buttonGroup {
     display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
+    flex-direction: column;
     align-items: center;
-}
-
-.buttonGroup button {
-    border: 4px solid #00ff00;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 14px;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
-}
-
-.buttonGroup {
-    /* Para agrupar los botones en una sola línea */
-    display: flex;
-    /* Para que sean en línea */
-    justify-content: space-around;
-    /* Para que se alineen horizontalmente */
-    align-items: center;
-    /* Para que se alineen verticalmente */
-    gap: 30px;   
+    gap: 40px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .sessionButton {
+    display: inline-block;
+    width: 250px;
+    padding: 20px;
     border: 4px solid #00ff00;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 14px;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
-    width: 150px;
+    font-size: 20px;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
     text-decoration: none;
-    align-self: center;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .sessionButton:hover {
     background-color: #00ff00;
     color: #000000;
+    box-shadow: 0 0 20px #00ff00, 0 0 20px #00ff00;
+    /* transform: scale(1.1); */
 }
 /*_________________________FOOTER_________________________*/

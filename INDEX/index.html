@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Space Invaders</title>
-    <link rel="stylesheet" href="index.css"/>
-    <link rel="stylesheet" href="../UTILS/BODY/body.css">
-    <link rel="stylesheet" href="../UTILS/NAVBAR/navbar.css"/>
-    <link rel="stylesheet" href="../UTILS/FOOTER/footer.css"/>
-  </head>
-  <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-          <div id="navbar"></div>
-          <script type="text/javascript" src="../UTILS/NAVBAR/navbar.js"></script>
-        </header>
-        <!-- Body -->
-      <div class="main">
-          <div class="gameImg">
-             <!--  <img src="../SOURCE/AlienLogo2.png" alt="logoImage" /> -->
-          </div>
-        <div class="buttonGroup">
-          <a href="../PROFILE/profile.html" class="sessionButton">Iniciar Sesión</a>
-          <a href="../PROFILE/profile.html" class="sessionButton">Registrarse</a>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="../UTILS/BODY/body.css">
+  <link rel="stylesheet" href="../UTILS/NAVBAR/navbar.css" />
+  <link rel="stylesheet" href="../UTILS/FOOTER/footer.css" />
+  <link rel="icon" href="../SOURCE/AlienLogo2.png" type="image/png">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div id="navbar"></div>
+      <script type="text/javascript" src="../UTILS/NAVBAR/navbar.js"></script>
+    </header>
+    <!-- Body -->
+    <div class="main">
+      <div class="gameImg">
+        <img src="../SOURCE/AlienLogo2.png" alt="logoImage" />
       </div>
-        <footer id="footer">
-          <script src="../UTILS/FOOTER/footer.js"></script>
-        </footer>
+      <div class="buttonGroup">
+        <a href="../LOGIN/login.html" class="sessionButton">Iniciar Sesión</a>
+        <a href="../PROFILE/profile.html" class="sessionButton">Registrarse</a>
+      </div>
     </div>
-  </body>
+    <footer id="footer">
+      <script src="../UTILS/FOOTER/footer.js"></script>
+    </footer>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
 </html>
