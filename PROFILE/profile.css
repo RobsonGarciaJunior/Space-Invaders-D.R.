@@ -61,7 +61,7 @@ input[readonly] {
     cursor: not-allowed;
 }
 
-button {
+#profile_form button {
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     padding: 10px;
@@ -75,7 +75,7 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+#profile_form button:hover {
     background-color: #00ff00;
     color: #000000;
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;

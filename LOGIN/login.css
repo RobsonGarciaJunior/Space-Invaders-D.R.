@@ -60,7 +60,7 @@ input[readonly] {
     cursor: not-allowed;
 }
 
-button {
+#login_form button {
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     padding: 10px;
@@ -74,13 +74,15 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+#login_form button :hover {
     background-color: #00ff00;
     color: #000000;
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
 .error {
-    border-color: red; /* Cambia el color del borde a rojo */
-    background-color: rgba(255, 0, 0, 0.1); /* Opcional: cambiar el fondo a un color ligero */
+    border-color: red;
+    /* Cambia el color del borde a rojo */
+    background-color: rgba(255, 0, 0, 0.1);
+    /* Opcional: cambiar el fondo a un color ligero */
 }
