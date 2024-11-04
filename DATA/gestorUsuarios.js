@@ -1,10 +1,14 @@
-// GestorUsuarios.js
-
-import {Usuario} from "./usuario.js"; // Importar la clase Usuario
+import { Usuario } from './usuario.js'; // Importar la clase Usuario
 
 export class GestorUsuarios {
     constructor() {
-        this.usuarios = this.cargarUsuarios();
+        if (GestorUsuarios.instance) {
+            return GestorUsuarios.instance;
+        } else {
+            this.usuarios = this.cargarUsuarios();
+            this.inicializarUsuarios();
+            GestorUsuarios.instance = this;
+        }
     }
 
     cargarUsuarios() {
@@ -39,5 +43,8 @@ export class GestorUsuarios {
         }
     }
 }
+
+const instanciaUnica = new GestorUsuarios();
+export default instanciaUnica;
 
 // export default GestorUsuarios; // Exportar la clase para usarla en otros módulos
