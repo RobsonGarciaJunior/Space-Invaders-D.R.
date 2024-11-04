@@ -1,8 +1,8 @@
 // GestorUsuarios.js
 
-import Usuario from "../DATA/usuario"; // Importar la clase Usuario
+import {Usuario} from "./usuario.js"; // Importar la clase Usuario
 
-export default class GestorUsuarios {
+export class GestorUsuarios {
     constructor() {
         this.usuarios = this.cargarUsuarios();
     }

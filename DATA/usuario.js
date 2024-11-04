@@ -1,5 +1,5 @@
 // Clase Usuario
-export default class Usuario {
+export class Usuario {
     constructor(imagen, nombre, email, contrasenna, puntuacion, fecha, region) {
         this.imagen = imagen;
         this.nombre = nombre;
