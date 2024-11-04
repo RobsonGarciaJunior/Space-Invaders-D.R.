@@ -1,3 +1,5 @@
+import instanciaUnica from '../../DATA/gestorUsuarios.js';// Importar el gestor de usuarios
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch("../UTILS/NAVBAR/navbar.html")
     .then((response) => response.text())
@@ -9,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Función para verificar y mostrar el usuario activo con un menú desplegable
 function mostrarUsuarioActivo() {
-  const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+  const usuarioActivo = instanciaUnica.obtenerUsuarioLoggeado(); 
 
   if (usuarioActivo) {
     // Crear el contenedor del dropdown
@@ -37,8 +39,7 @@ function mostrarUsuarioActivo() {
     logout.textContent = "Logout";
     logout.classList.add("dropdown-item");
     logout.addEventListener("click", () => {
-      localStorage.removeItem("usuarioActivo");
-      window.location.reload(); // Recargar para reflejar el cambio
+      instanciaUnica.cerrarSesion();
     });
 
     // Agregar opciones al menú desplegable

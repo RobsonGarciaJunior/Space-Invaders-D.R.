@@ -25,8 +25,8 @@ export class GestorUsuarios {
         this.guardarUsuarios();
     }
 
-    verificarUsuario(email, contrasenna) {
-        return this.usuarios.find(usuario => usuario.email === email && usuario.contrasenna === contrasenna);
+    verificarUsuario(nombre, contrasenna) {
+        return this.usuarios.find(usuario => usuario.nombre === nombre && usuario.contrasenna === contrasenna);
     }
 
     inicializarUsuarios() {
@@ -42,9 +42,33 @@ export class GestorUsuarios {
             usuariosData.forEach(usuario => this.agregarUsuario(usuario));
         }
     }
+
+    iniciarSesionUsuario(usuario) {
+        localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+    }
+
+    // Función para cerrar sesión
+    cerrarSesion() {
+        localStorage.removeItem("usuarioActivo");
+        alert("Has cerrado sesión.");
+        window.location.reload(); // Recargar la página o redirigir al login
+    }
+
+    obtenerUsuarioLoggeado() {
+        const usuarioJSON = localStorage.getItem("usuarioActivo");
+        return usuarioJSON? JSON.parse(usuarioJSON) : null;
+    }
+
+    modificarUsuario(nombreNuevo, nombre) {
+        const usuarios = this.cargarUsuarios()
+        var usuarioModificar = usuarios.find(usuario => usuario.nombre === nombre).nombre = nombreNuevo
+        usuarioModificar.nombre = nombreNuevo
+        this.obtenerUsuarioLoggeado().nombre = nombreNuevo;
+        this.guardarUsuarios();
+        window.location.reload();
+    }
+
 }
 
 const instanciaUnica = new GestorUsuarios();
 export default instanciaUnica;
-
-// export default GestorUsuarios; // Exportar la clase para usarla en otros módulos
