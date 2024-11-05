@@ -44,7 +44,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+select {
     padding: 10px;
     font-size: 16px;
     border: 2px solid #00ff00;
@@ -79,4 +80,29 @@ input[readonly] {
     background-color: #00ff00;
     color: #000000;
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+.image-input {
+    display: flex; /* Usar flexbox para centrar el contenido */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Alinea horizontalmente al centro */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el área */
+    border: 1px solid #ccc; /* Borde para el contenedor */
+    border-radius: 5px; /* Opcional: esquinas redondeadas */
+    width: 150px; /* Ancho del contenedor */
+    height: 150px; /* Altura del contenedor */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el contenedor */
+    background-color: #f0f0f0; /* Color de fondo para el área de imagen */
+    margin: 0 auto; /* Centra el recuadro horizontalmente en su contenedor */
+}
+
+.image-preview {
+    display: flex; /* Utiliza flexbox para centrar la imagen */
+    align-items: center; /* Alinea verticalmente la imagen */
+    justify-content: center; /* Alinea horizontalmente la imagen */
+}
+
+#imagePreview {
+    max-width: 100%; /* Máximo ancho de la imagen dentro del contenedor */
+    max-height: 100%; /* Máxima altura de la imagen dentro del contenedor */
 }
