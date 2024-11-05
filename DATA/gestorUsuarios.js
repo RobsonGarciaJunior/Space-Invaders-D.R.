@@ -128,7 +128,7 @@ export class GestorUsuarios {
     return usuarioJSON ? JSON.parse(usuarioJSON) : null;
   }
 
-  modificarUsuario(nombreNuevo, nombre) {
+  modificarUsuario(nombreNuevo, imgNueva, regionNueva, nombre) {
     // const usuarios = this.cargarUsuarios()
     // var usuarioModificar = usuarios.find(usuario => usuario.nombre === nombre).nombre = nombreNuevo
     // usuarioModificar.nombre = nombreNuevo
@@ -164,7 +164,8 @@ export class GestorUsuarios {
       }
 
       usuarioModificar.nombre = nombreNuevo;
-
+      usuarioModificar.imagen = imgNueva
+      usuarioModificar.region = regionNueva;
       // Guardar la lista de usuarios actualizada en localStorage
       this.guardarUsuarios();
 
