@@ -1,0 +1,41 @@
+.enemy-easy {
+    position: absolute;
+    width: 70px;
+    /* Width of the enemy */
+    height: 70px;
+    /* Height of the enemy */
+    background-image: url('../SOURCE/ovni.png');
+    /* URL of the enemy's spaceship image */
+    background-size: cover;
+    /* Cover the entire area */
+    background-repeat: no-repeat;
+    /* Prevent repeat */
+}
+
+.enemy-medium {
+    position: absolute;
+    width: 50px;
+    /* Width of the enemy */
+    height: 50px;
+    /* Height of the enemy */
+    background-image: url('images/ovni.png');
+    /* URL of the enemy's spaceship image */
+    background-size: cover;
+    /* Cover the entire area */
+    background-repeat: no-repeat;
+    /* Prevent repeat */
+}
+
+.enemy-hard {
+    position: absolute;
+    width: 30px;
+    /* Width of the enemy */
+    height: 30px;
+    /* Height of the enemy */
+    background-image: url('images/ovni.png');
+    /* URL of the enemy's spaceship image */
+    background-size: cover;
+    /* Cover the entire area */
+    background-repeat: no-repeat;
+    /* Prevent repeat */
+}

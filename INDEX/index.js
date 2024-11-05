@@ -15,10 +15,14 @@ function updateButtons() {
     // Si el usuario está logueado, mostrar el botón "Jugar" y ocultar "Iniciar Sesión"
     jugarButton.style.display = "block"; // Mostrar botón Jugar
     loginButton.style.display = "none"; // Ocultar botón Iniciar Sesión
+    // jugarButton.classList.add("playButtonDisplay");
+    // loginButton.classList.add("loginButtonUndisplay");
   } else {
     // Si el usuario no está logueado, ocultar "Jugar" y mostrar "Iniciar Sesión"
     jugarButton.style.display = "none"; // Ocultar botón Jugar
     loginButton.style.display = "block"; // Mostrar botón Iniciar Sesión
+    // jugarButton.classList.add("playButtonUndisplay");
+    // loginButton.classList.add("loginButtonDisplay");
   }
 }
 // if (usuarioActivo !== null) {
