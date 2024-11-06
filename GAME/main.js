@@ -20,7 +20,11 @@ function logToConsole(message) {
   const newMessage = document.createElement("p");
   newMessage.textContent = message;
   consoleOutput.appendChild(newMessage);
-  consoleOutput.scrollTop = consoleOutput.scrollHeight; // Mantener el scroll al final
+  // If the console content exceeds the visible area, remove the oldest line
+  while (consoleOutput.scrollHeight > consoleOutput.clientHeight) {
+    consoleOutput.removeChild(consoleOutput.firstChild);
+  }
+  // consoleOutput.scrollTop = consoleOutput.scrollHeight; // Mantener el scroll al final
 }
 
 // Función para manejar el Game Over
@@ -28,6 +32,33 @@ function gameOver() {
   logToConsole("¡Game Over! Has chocado con un enemigo.");
   clearInterval(gameLoop); // Detener el bucle del juego
 }
+
+window.addEventListener("keyup", (event) => {
+  const key = event.key;
+  if (key === "Escape") {
+    clearInterval(gameLoop);
+    window.location.href = "../INDEX/index.html"; // Redirigir al index.html
+  }
+});
+
+// function mostrarModal(mensaje, onConfirm) {
+//   const modal = document.getElementById("modal");
+//   const modalContent = document.getElementById("modalContent");
+//   const confirmButton = document.getElementById("confirmButton");
+
+//   modalContent.innerHTML = mensaje;
+//   confirmButton.style.display = onConfirm ? "inline-block" : "none";
+//   modal.style.display = "block";
+
+//   if (onConfirm) {
+//     confirmButton.onclick = onConfirm;
+//   }
+// }
+
+// function cerrarModal() {
+//   const modal = document.getElementById("modal");
+//   modal.style.display = "none";
+// }
 
 // Bucle del juego: mover el jugador, enemigos y misiles cada 10ms
 const gameLoop = setInterval(() => {

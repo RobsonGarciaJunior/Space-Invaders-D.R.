@@ -1,14 +1,67 @@
+* {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
 /* Style for the game area */
 #game-area {
     position: absolute;
-    /* Position it absolutely to cover the entire viewport */
-    width: 100vw;
-    /* Full width of the viewport */
-    height: 100vh;
-    /* Full height of the viewport */
-    border: 1px solid black;
-    /* Optional border for visual reference */
-    background-image: url("images/space-pixel-art.gif");
+    width: 100%;
+    min-height: 100%;
+    background-image: url("../SOURCE/gameBackgroundSpace.gif");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* Style for the score display */
+#score-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    overflow-y: hidden;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    z-index: 10;
+}
+
+/* Style for the console area */
+#console {
+    max-height: 35px;
+    /* Altura máxima del área de la consola */
+    overflow-y: auto;
+    /* Scroll vertical si el contenido es más grande */
+    border: 2px solid #00ff00;
+    /* Borde verde brillante */
+    padding: 10px;
+    /* Padding para el área de la consola */
+    position: absolute;
+    /* Posicionamiento de la consola */
+    bottom: 0;
+    /* Posicionándola en la parte inferior */
+    left: 0;
+    /* Alineándola a la izquierda */
+    right: 0;
+    /* Alineándola a la derecha */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Fondo negro semi-transparente */
+    color: #ffffff;
+    font-size: 14px;
+    /* Tamaño de fuente */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    /* Sombra para el texto */
 }
