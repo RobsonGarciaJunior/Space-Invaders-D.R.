@@ -15,6 +15,7 @@ function updateButtons() {
     // Si el usuario está logueado, mostrar el botón "Jugar" y ocultar "Iniciar Sesión"
     jugarButton.style.display = "block"; // Mostrar botón Jugar
     loginButton.style.display = "none"; // Ocultar botón Iniciar Sesión
+    document.getElementById("profile").textContent = "Editar Perfil";
     // jugarButton.classList.add("playButtonDisplay");
     // loginButton.classList.add("loginButtonUndisplay");
   } else {
@@ -27,5 +28,4 @@ function updateButtons() {
 }
 // if (usuarioActivo !== null) {
 //   document.getElementById("login").remove();
-//     document.getElementById("profile").textContent = "Editar Perfil";
 //  }
