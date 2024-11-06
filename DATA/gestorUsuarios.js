@@ -25,6 +25,11 @@ export class GestorUsuarios {
     this.guardarUsuarios();
   }
 
+  eliminarUsuarios() {
+    this.usuarios = [];
+    this.guardarUsuarios();
+  }
+
   verificarUsuario(nombre, contrasenna) {
     return this.usuarios.find(
       (usuario) =>
@@ -32,7 +37,7 @@ export class GestorUsuarios {
     );
   }
 
-  inicializarUsuarios() {
+    inicializarUsuarios() {
     if (this.usuarios.length === 0) {
       const usuariosData = [
         new Usuario(
@@ -129,12 +134,6 @@ export class GestorUsuarios {
   }
 
   modificarUsuario(nombreNuevo, imgNueva, regionNueva, nombre) {
-    // const usuarios = this.cargarUsuarios()
-    // var usuarioModificar = usuarios.find(usuario => usuario.nombre === nombre).nombre = nombreNuevo
-    // usuarioModificar.nombre = nombreNuevo
-    // this.obtenerUsuarioLoggeado().nombre = nombreNuevo;
-    // this.guardarUsuarios();
-    // window.location.reload();
     // Buscar el usuario a modificar en el array de usuarios
     const usuarioModificar = this.usuarios.find(
       (usuario) => usuario.nombre === nombre
@@ -147,14 +146,13 @@ export class GestorUsuarios {
         (usuario) => usuario.nombre === nombreNuevo
       );
 
-      const existeNombreEnRegion = this.usuarios.some(
-        (usuario) =>
-          usuario.nombre === nombreNuevo &&
-          usuario.region === usuarioModificar.region
-      );
-
-      if (existeNombreNuevo) {
-        if (existeNombreEnRegion) {
+      if (existeNombreNuevo || usuarioModificar.nombre === nombre) {
+        const existeNombreEnRegion = this.usuarios.some(
+          (usuario) =>
+            usuario.nombre === nombreNuevo &&
+            usuario.region === usuarioModificar.region
+        );
+        if (existeNombreEnRegion && usuarioModificar.nombre !== nombre) {
           console.error("El nombre nuevo ya existe.");
           return {
             status: "error",
@@ -173,13 +171,14 @@ export class GestorUsuarios {
       const usuarioLogueado = this.obtenerUsuarioLoggeado();
       if (usuarioLogueado && usuarioLogueado.nombre === nombre) {
         usuarioLogueado.nombre = nombreNuevo;
+        usuarioLogueado.imagen = imgNueva
+        usuarioLogueado.region = regionNueva;
         // Guardar el usuario logueado actualizado en localStorage
         localStorage.setItem("usuarioActivo", JSON.stringify(usuarioLogueado));
       }
       return { status: "success", message: "Usuario modificado correctamente" };
 
       //   // Recargar la página para reflejar los cambios
-      //   window.location.reload();
     } else {
       console.error("Usuario no encontrado.");
     }
