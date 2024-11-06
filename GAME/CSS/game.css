@@ -1,0 +1,14 @@
+/* Style for the game area */
+#game-area {
+    position: absolute;
+    /* Position it absolutely to cover the entire viewport */
+    width: 100vw;
+    /* Full width of the viewport */
+    height: 100vh;
+    /* Full height of the viewport */
+    border: 1px solid black;
+    /* Optional border for visual reference */
+    background-image: url("images/space-pixel-art.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

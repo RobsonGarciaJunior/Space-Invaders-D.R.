@@ -1,7 +1,15 @@
 // Seleccionar los elementos del DOM
 const consoleOutput = document.getElementById("console");
-const movableObject = document.getElementById("movable-object");
+// const player = document.getElementById("movable-object");
 const gameArea = document.getElementById("game-area");
+const player = new Player(gameArea);
+// Suscribirse a los cambios en el enemigo para actualizar su DOM
+player.subscribe((data) => {
+  if (data.isAlive === false) return; // Si el enemigo está muerto, no hacer nada
+  player.domElement.style.left = data.x + "px";
+  player.domElement.style.top = data.y + "px";
+  player.domElement.style.transform = data.rotation;
+});
 
 // Inicializar enemigos y configurar el juego
 let enemies = [];
@@ -25,13 +33,20 @@ function gameOver() {
 const gameLoop = setInterval(() => {
   movePlayer(); // Mover el jugador
   moveEnemies(); // Mover enemigos
-  moveMissiles(enemies); // Pasar el array de enemigos a la función de misiles
+  // moveMissiles(enemies); // Pasar el array de enemigos a la función de misiles
 }, 10);
 // Función para crear enemigos en intervalos
 function spawnEnemies() {
-  // Generar 3 enemigos inicialmente
+  // Generar 3 enemigos faciles inicialmente
   for (let i = 0; i < 3; i++) {
-    let enemy = new Enemy(gameArea, enemyType);
+    let enemy = new Enemy(gameArea, "easy");
+
+    // Suscribirse a los cambios en el enemigo para actualizar su DOM
+    enemy.subscribe((data) => {
+      if (data.isAlive === false) return; // Si el enemigo está muerto, no hacer nada
+      enemy.domElement.style.left = data.x + "px";
+      enemy.domElement.style.top = data.y + "px";
+    });
     enemies.push(enemy);
   }
 }

@@ -1,0 +1,29 @@
+.player {
+    position: absolute;
+    width: 50px;
+    /* Width of the player */
+    height: 50px;
+    /* Height of the player */
+    background-image: url('../SOURCE/playerSpaceShip.png');
+    /* URL of the player's spaceship image */
+    background-size: cover;
+    /* Cover the entire area */
+    background-repeat: no-repeat;
+    /* Prevent repeat */
+}
+.moveLeft{
+    /* Left movement animation */
+    animation: moveLeft 1s;
+}
+.moveRight{
+    /* Left movement animation */
+    animation: moveLeft 1s;
+}
+.moveUp{
+    /* Left movement animation */
+    animation: moveLeft 1s;
+}
+.moveDown{
+    /* Left movement animation */
+    animation: moveLeft 1s;
+}
