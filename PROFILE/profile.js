@@ -1,4 +1,5 @@
-import instanciaUnica from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+import GestorUsuarios from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+const instanciaUnica = GestorUsuarios.getInstance();
 const profileForm = document.getElementById("profile_form");
 var imagen = "";
 window.addEventListener("DOMContentLoaded", () => {

@@ -1,7 +1,8 @@
-import instanciaUnica from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+import GestorUsuarios from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+const instanciaUnica = GestorUsuarios.getInstance();
 document.addEventListener("DOMContentLoaded", () => {
   // Llama a la función para crear la tabla
-  instanciaUnica.inicializarUsuarios(); // Inicializar usuarios al cargar la aplicación
+  // instanciaUnica.inicializarUsuarios(); // Inicializar usuarios al cargar la aplicación
   updateButtons(); // Actualiza los botones según el estado de la sesión
 });
 
