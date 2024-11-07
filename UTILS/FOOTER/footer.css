@@ -14,3 +14,36 @@ footer {
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
     /* Sombra para el texto */
 }
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+
+    footer {
+        overflow: hidden;
+        position: fixed;
+        max-width:fit-content ;
+        /* Fija el footer a la parte inferior */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        /* Asegura que ocupe el ancho completo */
+        border-top: 4px solid #00ff00;
+        /* Borde solo en la parte superior */
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Fondo negro semi-transparente */
+        color: #ffffff;
+        /* Texto en blanco */
+        font-family: 'Press Start 2P', cursive;
+        /* Fuente retro */
+        font-size: 14px;
+        /* Tamaño de fuente */
+        text-align: center;
+        /* Centra el contenido dentro del footer */
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        /* Sombra en el texto */
+        z-index: 100;
+        /* Asegura que el footer se superponga al contenido */
+    }
+
+}

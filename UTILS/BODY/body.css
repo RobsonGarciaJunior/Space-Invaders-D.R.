@@ -21,3 +21,28 @@ body {
     min-height: 100dvh;
     /* Empuja el footer al fondo */
 }
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+
+    /* Cuerpo de la página */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url("../../SOURCE/spacex.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+    }
+
+    /* Contenedor principal */
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}

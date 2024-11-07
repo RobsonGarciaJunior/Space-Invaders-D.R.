@@ -147,3 +147,20 @@ header img {
     color: #000000;
     box-shadow: 0 0 10px #00ff00, 0 0 10px #00ff00;
 }
+
+/* Adaptación móvil */
+
+@media (max-width: 600px) {
+    #navbar {
+        flex-direction: column; /* Coloca el contenido en columnas en pantallas pequeñas */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Espacio entre el logo y los botones */
+    }
+
+    .navbar-buttons {
+        width: 100%;
+        justify-content: space-around; /* Distribuye los botones */
+    }
+}
