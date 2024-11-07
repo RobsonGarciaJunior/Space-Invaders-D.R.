@@ -1,4 +1,5 @@
-import instanciaUnica from '../../DATA/gestorUsuarios.js';// Importar el gestor de usuarios
+import GestorUsuarios from "../../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+const instanciaUnica = GestorUsuarios.getInstance();
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch("../UTILS/NAVBAR/navbar.html")

@@ -1,4 +1,5 @@
-import instanciaUnica from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+import GestorUsuarios from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+const instanciaUnica = GestorUsuarios.getInstance();
 document.addEventListener('DOMContentLoaded', () => {
     // Llama a la función para crear la tabla
     inicializarUsuarios(); // Verificar si los usuarios están en el local storage
@@ -133,10 +134,9 @@ function crearTabla() {
                         fila.removeChild(fila.firstChild);
                     }
                 });
-                usuarios = [];
                 instanciaUnica.eliminarUsuarios()
                 crearTabla();
-                
+                window.location.reload();
             });
         }
     }

@@ -1,13 +1,17 @@
 import { Usuario } from "./usuario.js"; // Importar la clase Usuario
 
 export class GestorUsuarios {
+
+  static instanciaUnica = null;
+
   constructor() {
-    if (GestorUsuarios.instance) {
-      return GestorUsuarios.instance;
+    if (GestorUsuarios.instanciaUnica) {
+      return GestorUsuarios.instanciaUnica;
     } else {
       this.usuarios = this.cargarUsuarios();
       this.inicializarUsuarios();
-      GestorUsuarios.instance = this;
+      GestorUsuarios.instanciaUnica = this;
+      return this;
     }
   }
 
@@ -26,7 +30,9 @@ export class GestorUsuarios {
   }
 
   eliminarUsuarios() {
-    this.usuarios = [];
+    this.usuarios.forEach((usuario) => {
+      usuario.puntuacion = 0
+    });
     this.guardarUsuarios();
   }
 
@@ -183,7 +189,14 @@ export class GestorUsuarios {
       console.error("Usuario no encontrado.");
     }
   }
+
+  static getInstance() {
+    if (!GestorUsuarios.instanciaUnica) {
+      GestorUsuarios.instanciaUnica = new GestorUsuarios();
+    }
+    return GestorUsuarios.instanciaUnica;
+  }
+
 }
 
-const instanciaUnica = new GestorUsuarios();
-export default instanciaUnica;
+export default GestorUsuarios;
