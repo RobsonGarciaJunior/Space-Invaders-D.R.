@@ -37,7 +37,7 @@ export class GestorUsuarios {
     );
   }
 
-    inicializarUsuarios() {
+  inicializarUsuarios() {
     if (this.usuarios.length === 0) {
       const usuariosData = [
         new Usuario(
@@ -162,7 +162,7 @@ export class GestorUsuarios {
       }
 
       usuarioModificar.nombre = nombreNuevo;
-      usuarioModificar.imagen = imgNueva
+      usuarioModificar.imagen = imgNueva;
       usuarioModificar.region = regionNueva;
       // Guardar la lista de usuarios actualizada en localStorage
       this.guardarUsuarios();
@@ -171,7 +171,7 @@ export class GestorUsuarios {
       const usuarioLogueado = this.obtenerUsuarioLoggeado();
       if (usuarioLogueado && usuarioLogueado.nombre === nombre) {
         usuarioLogueado.nombre = nombreNuevo;
-        usuarioLogueado.imagen = imgNueva
+        usuarioLogueado.imagen = imgNueva;
         usuarioLogueado.region = regionNueva;
         // Guardar el usuario logueado actualizado en localStorage
         localStorage.setItem("usuarioActivo", JSON.stringify(usuarioLogueado));

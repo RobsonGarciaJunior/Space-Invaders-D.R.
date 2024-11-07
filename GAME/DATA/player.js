@@ -68,20 +68,20 @@ class Player extends Observable {
     this.notify({ x: this.x, y: this.y, isAlive: this.isAlive });
   }
 
-  // fire(mouseX, mouseY) {
-  //   //Creamos el objeto bala que dispara el usuario pasandole la posicion del usuario
-  //   //Hacia donde debe rotar
-  //   //Y la posicion de hacia donde apunta el raton en el momento del disparo
-  //   const bullet = new Missile(this.x, this.y, this.rotation, mouseX, mouseY);
+  // // Método para rotar el jugador hacia el ratón (sin disparar)
+  // rotateToMouse(mouseX, mouseY) {
+  //   // Calcular el ángulo entre la posición del jugador y la posición del ratón
+  //   const deltaX = mouseX - this.x;
+  //   const deltaY = mouseY - this.y;
+  //   const angle = Math.atan2(deltaY, deltaX); // Calcular el ángulo en radianes
+  //   const rotationAngle = (angle * 180) / Math.PI + 90; // Convertir a grados y ajustar (corrección de rotación)
 
-  //   this.gameArea.appendChild(bullet.domElement);
+  //   // Aplicar la rotación al jugador
+  //   this.rotation = rotationAngle;
+  //   this.domElement.style.transform = `rotate(${this.rotation}deg)`; // Actualizar la rotación en el DOM
 
-  //   // Suscribirse a los cambios en la bala para actualizar su DOM
-  //   bullet.subscribe((data) => {
-  //     if (data.isAlive === false) return; // Si el enemigo está muerto, no hacer nada
-  //     bullet.domElement.style.left = data.x + "px";
-  //     bullet.domElement.style.top = data.y + "px";
-  //   });
+  //   // Notificar a los observadores que la rotación ha cambiado
+  //   this.notify({ rotation: this.rotation });
   // }
 
   hit() {

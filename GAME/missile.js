@@ -1,20 +1,20 @@
-// Variables para la puntuación
-let score = 0; // Detectar clic del ratón para disparar
 gameArea.addEventListener("click", (event) => {
   fireMissile(event.clientX, event.clientY);
 });
 
 // Función para disparar un misil hacia la posición del ratón
 function fireMissile(mouseX, mouseY) {
-  //SERIA MAS CORRECTO HACERLO ASI?
-  // player.fire(mouseX, mouseY);
-
   //Creamos el objeto bala que dispara el usuario pasandole la posicion del usuario
   //Hacia donde debe rotar
   //Y la posicion de hacia donde apunta el raton en el momento del disparo
-  const missile = new Missile(player.x, player.y, mouseX, mouseY, gameArea, player.rotation);
-
-  // gameArea.appendChild(missile.domElement);
+  const missile = new Missile(
+    player.x,
+    player.y,
+    mouseX,
+    mouseY,
+    gameArea,
+    player.rotation
+  );
 
   // Suscribirse a los cambios en la bala para actualizar su DOM
   missile.subscribe((data) => {
@@ -26,12 +26,7 @@ function fireMissile(mouseX, mouseY) {
       missile.domElement.style.top = data.y + "px";
     }
   });
-  //   missile.subscribe((data) => {
-  //     if (data.isAlive === false) return; // Si el enemigo está muerto, no hacer nada
-  //     missile.domElement.style.left = data.x + "px";
-  //     missile.domElement.style.top = data.y + "px";
-  //   });
-
+  
   // Guardar la información del misil
   missiles.push(missile);
 }

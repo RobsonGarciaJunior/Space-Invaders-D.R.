@@ -61,3 +61,7 @@ function movePlayer() {
     player.move("down");
   }
 }
+// gameArea.addEventListener("mousemove", (event) => {
+//   // Llamar a rotateToMouse para actualizar la rotación del jugador
+//   player.rotateToMouse(event.clientX, event.clientY);
+// });
