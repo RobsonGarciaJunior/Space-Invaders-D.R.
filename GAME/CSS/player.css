@@ -1,29 +1,28 @@
 .player {
     position: absolute;
     width: 50px;
-    /* Width of the player */
     height: 50px;
-    /* Height of the player */
     background-image: url('../SOURCE/playerSpaceShip.png');
-    /* URL of the player's spaceship image */
     background-size: cover;
-    /* Cover the entire area */
     background-repeat: no-repeat;
-    /* Prevent repeat */
 }
-.moveLeft{
-    /* Left movement animation */
-    animation: moveLeft 1s;
+
+.rotateLeft {
+    transform: rotate(-90deg);
+    /* Rotate 90 degrees to the left */
 }
-.moveRight{
-    /* Left movement animation */
-    animation: moveLeft 1s;
+
+.rotateRight {
+    transform: rotate(90deg);
+    /* Rotate 90 degrees to the right */
 }
-.moveUp{
-    /* Left movement animation */
-    animation: moveLeft 1s;
+
+.rotateUp {
+    transform: rotate(0deg);
+    /* No rotation, pointing upwards */
 }
-.moveDown{
-    /* Left movement animation */
-    animation: moveLeft 1s;
+
+.rotateDown {
+    transform: rotate(180deg);
+    /* Rotate 180 degrees, pointing downwards */
 }

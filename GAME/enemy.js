@@ -4,30 +4,13 @@ function moveEnemies() {
     // const enemyPos = enemy.getBoundingClientRect();
     const playerPos = document.getElementById("player").getBoundingClientRect();
 
-    // if (enemyPos.left < playerPos.left) {
-    //   enemy.style.left = parseInt(enemy.style.left) + 1 + "px";
-    // } else if (enemyPos.left > playerPos.left) {
-    //   enemy.style.left = parseInt(enemy.style.left) - 1 + "px";
-    // }
-
-    // if (enemyPos.top < playerPos.top) {
-    //   enemy.style.top = parseInt(enemy.style.top) + 1 + "px";
-    // } else if (enemyPos.top > playerPos.top) {
-    //   enemy.style.top = parseInt(enemy.style.top) - 1 + "px";
-    // }
-
-    // // Detección de colisiones
-    // if (checkCollision(movableObject, enemy)) {
-    //   gameOver();
-    // }
-
     if (enemy.isAlive) {
       enemy.move(playerPos.left, playerPos.top);
 
-    //   // Detección de colisiones
-    //   if (checkCollision(playerPos, enemy.domElement)) {
-    //     gameOver();
-    //   }
+      // Detección de colisiones
+      if (checkCollision(player.domElement, enemy.domElement)) {
+        gameOver();
+      }
     }
   });
 }
@@ -44,3 +27,19 @@ function moveEnemies() {
 //     rect1.top > rect2.bottom
 //   );
 // }
+// Función para verificar si dos elementos en el DOM están colisionando
+function checkCollision(element1, element2) {
+  // Obtener las coordenadas de los bordes de cada elemento
+  const bounds1 = element1.getBoundingClientRect();
+  const bounds2 = element2.getBoundingClientRect();
+
+  // Verificar si los elementos NO están colisionando
+  const noCollision =
+    bounds1.right < bounds2.left ||   // Elemento 1 está a la izquierda de Elemento 2
+    bounds1.left > bounds2.right ||   // Elemento 1 está a la derecha de Elemento 2
+    bounds1.bottom < bounds2.top ||   // Elemento 1 está arriba de Elemento 2
+    bounds1.top > bounds2.bottom;     // Elemento 1 está abajo de Elemento 2
+
+  // Si no hay colisión, devolver falso. Si sí la hay, devolver verdadero.
+  return !noCollision;
+}

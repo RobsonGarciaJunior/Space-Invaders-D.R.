@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpaceInvaders</title>
-    <link rel="stylesheet" href="CSS/game.css" />
-    <link rel="stylesheet" href="CSS/player.css" />
-    <link rel="stylesheet" href="CSS/enemy.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <script src="DATA/observable.js"></script>
-    <script src="DATA/player.js"></script>
-    <script src="DATA/enemy.js"></script>
-    <script src="DATA/missile.js"></script>
-  </head>
-  <body>
-    <div id="container">
-      <div id="score-display">Puntos: 0</div>
 
-      <div id="game-area">
-        <!-- <div id="movable-object"></div> -->
-      </div>
-      <div id="console"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaceInvaders</title>
+  <link rel="stylesheet" href="CSS/game.css" />
+  <link rel="stylesheet" href="CSS/player.css" />
+  <link rel="stylesheet" href="CSS/enemy.css" />
+  <link rel="stylesheet" href="CSS/missile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <script src="DATA/observable.js"></script>
+  <script src="DATA/player.js"></script>
+  <script src="DATA/enemy.js"></script>
+  <script src="DATA/missile.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="score-display">Puntos: 0</div>
+
+    <div id="game-area">
+      <!-- <div id="movable-object"></div> -->
     </div>
-    <script src="main.js"></script>
-    <script src="player.js"></script>
-    <script src="enemy.js"></script>
-    <script src="missile.js"></script>
-  </body>
+    <div id="console"></div>
+  </div>
+  <div id="modal" class="modal">
+    <div id="modalContent" class="modal-content">
+      <p></p>
+      <button id="confirmButton">Confirmar</button>
+      <button id="cancelButton">Cancelar</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="player.js"></script>
+  <script src="enemy.js"></script>
+  <script src="missile.js"></script>
+</body>
+
 </html>

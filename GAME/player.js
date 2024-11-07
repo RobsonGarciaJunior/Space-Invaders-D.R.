@@ -6,7 +6,7 @@ let moveRightKey = false;
 
 // Detectar las teclas de dirección
 window.addEventListener("keydown", (event) => {
-  const key = event.key;
+  const key = event.key.toLowerCase();  // Convertir la tecla a minúscula
 
   switch (key) {
     case "d":
@@ -22,13 +22,13 @@ window.addEventListener("keydown", (event) => {
       moveDownKey = true;
       break;
     default:
-      logToConsole(`Tecla no asignada: ${key}`);
+      // logToConsole(`Tecla no asignada: ${key}`);
   }
 });
 
 // Detectar las teclas que se sueltan
 window.addEventListener("keyup", (event) => {
-  const key = event.key;
+  const key = event.key.toLowerCase();  // Convertir la tecla a minúscula
 
   switch (key) {
     case "d":

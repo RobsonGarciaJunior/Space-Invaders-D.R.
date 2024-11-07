@@ -32,11 +32,13 @@ class Enemy extends Observable {
         enemy.speed = 2;
         break;
     }
-    enemy.style.top =
-      Math.floor(Math.random() * (this.gameArea.offsetHeight - 30)) + "px";
-    enemy.style.left =
-      Math.floor(Math.random() * (this.gameArea.offsetWidth - 30)) + "px";
+    
 
+    // Colocar al enemigo en la esquina superior derecha
+    this.x = this.gameArea.offsetWidth;
+    this.y = 0; // Siempre en la parte superior
+
+    enemy.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
     enemy.style.left = this.x + "px";
     enemy.style.top = this.y + "px";
 

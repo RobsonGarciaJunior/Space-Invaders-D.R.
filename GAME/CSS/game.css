@@ -18,13 +18,16 @@ body {
 
 /* Style for the game area */
 #game-area {
-    position: absolute;
+    position: relative;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
+    /* Esto asegura que ocupe toda la altura de la pantalla */
     background-image: url("../SOURCE/gameBackgroundSpace.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
+
 
 /* Style for the score display */
 #score-display {
@@ -35,7 +38,7 @@ body {
     padding: 10px;
     color: #ffffff;
     font-size: 14px;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    text-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00;
     z-index: 10;
 }
 
@@ -62,6 +65,70 @@ body {
     color: #ffffff;
     font-size: 14px;
     /* Tamaño de fuente */
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    text-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00;
     /* Sombra para el texto */
+}
+
+/* Estilo para el modal de confirmación */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    /* Más alto que otros elementos para asegurar que esté visible */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo negro más oscuro y semi-transparente */
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fondo oscuro para ajustarse al tema espacial */
+    color: #00ff00;
+    /* Texto verde brillante */
+    border: 2px solid #00ff00;
+    /* Borde verde brillante */
+    font-size: 20px;
+    /* Tamaño de fuente */
+    text-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    /* Sombra verde suave */
+}
+
+/* Estilos para los botones del modal */
+.modal-content button {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 4px solid #00ff00;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    text-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #00ff00;
+    color: #000000;
+    box-shadow: 0 0 20px #00ff00, 0 0 20px #00ff00;
+    transform: scale(1.1);
+}
+
+.modal-content button:active {
+    background-color: #005f00;
+    /* Color más oscuro al hacer clic */
+    transform: scale(0.95);
+    /* Reducir un poco al hacer clic */
 }
