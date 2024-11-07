@@ -28,6 +28,21 @@ body {
     overflow: hidden;
 }
 
+#mothership {
+    position: absolute;
+    top: -50px;
+    /* Ajusta según la distancia deseada desde la parte superior */
+    right: -100px;
+    /* Valor negativo para que sobresalga del borde derecho */
+    width: 350px;
+    /* Ajusta según el tamaño que prefieras */
+    height: auto;
+    z-index: 5;
+    /* Asegúrate de que esté encima de otros elementos */
+    transform: none;
+    /* Elimina el translateX para evitar desplazamientos innecesarios */
+}
+
 
 /* Style for the score display */
 #score-display {

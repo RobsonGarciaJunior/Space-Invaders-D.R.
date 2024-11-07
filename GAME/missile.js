@@ -12,7 +12,7 @@ function fireMissile(mouseX, mouseY) {
   //Creamos el objeto bala que dispara el usuario pasandole la posicion del usuario
   //Hacia donde debe rotar
   //Y la posicion de hacia donde apunta el raton en el momento del disparo
-  const missile = new Missile(player.x, player.y, mouseX, mouseY, gameArea);
+  const missile = new Missile(player.x, player.y, mouseX, mouseY, gameArea, player.rotation);
 
   // gameArea.appendChild(missile.domElement);
 

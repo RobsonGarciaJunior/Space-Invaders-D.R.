@@ -1,8 +1,8 @@
 .enemy-easy {
     position: absolute;
-    width: 70px;
+    width: 80px;
     /* Width of the enemy */
-    height: 70px;
+    height: 80px;
     /* Height of the enemy */
     background-image: url('../SOURCE/ovni.png');
     /* URL of the enemy's spaceship image */
@@ -18,7 +18,7 @@
     /* Width of the enemy */
     height: 50px;
     /* Height of the enemy */
-    background-image: url('images/ovni.png');
+    background-image: url('../SOURCE/ovni2.png');
     /* URL of the enemy's spaceship image */
     background-size: cover;
     /* Cover the entire area */

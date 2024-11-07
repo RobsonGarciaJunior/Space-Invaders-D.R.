@@ -5,7 +5,7 @@ class Enemy extends Observable {
     this.gameArea = gameArea;
     this.enemyType = enemyType;
     this.isAlive = true;
-    this.speed = 2;
+    this.speed = 0;
     this.x = 0;
     this.y = 0;
     this.domElement = this.createEnemy();
@@ -21,23 +21,29 @@ class Enemy extends Observable {
     switch (this.enemyType) {
       case "easy":
         enemy.classList.add("enemy-easy");
-        enemy.speed = 2;
+        this.speed = 3;
         break;
       case "medium":
         enemy.classList.add("enemy-medium");
-        enemy.speed = 2;
+        this.speed = 5;
         break;
       case "hard":
         enemy.classList.add("enemy-hard");
-        enemy.speed = 2;
+        this.speed = 2;
         break;
     }
-    
 
-    // Colocar al enemigo en la esquina superior derecha
-    // this.x = this.gameArea.offsetWidth;
-    this.y = 0; // Siempre en la parte superior
+    // // Colocar al enemigo en la esquina superior derecha
+    // // this.x = this.gameArea.offsetWidth;
+    // this.y = 0; // Siempre en la parte superior
 
+    // Obtener las coordenadas de la nave nodriza
+    const mothership = document.getElementById("mothership");
+    const mothershipRect = mothership.getBoundingClientRect();
+
+    // Colocar el enemigo en una posición aleatoria dentro de la nave nodriza
+    this.x = mothershipRect.left + Math.random() * mothershipRect.width;
+    this.y = mothershipRect.top + Math.random() * mothershipRect.height;
     enemy.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
     enemy.style.left = this.x + "px";
     enemy.style.top = this.y + "px";

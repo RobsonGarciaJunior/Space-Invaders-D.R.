@@ -137,11 +137,24 @@ gameLoop = setInterval(() => {
 // FIN PAUSAR JUEGO CON MODAL
 
 // Función para crear enemigos en intervalos
+let enemyCount = 0; // Contador global para llevar el registro de los enemigos creados
+
 function spawnEnemies() {
-  // Generar 3 enemigos fáciles con un intervalo de 1 segundo entre cada uno
+  // Generar 3 enemigos con un intervalo de 1 segundo entre cada uno
   for (let i = 0; i < 5; i++) {
     setTimeout(() => {
-      let enemy = new Enemy(gameArea, "easy");
+      // Determinar el tipo de enemigo en función del número de enemigos creados
+      let enemyType;
+
+      if (enemyCount < 8) {
+        // Los primeros 10 enemigos serán de tipo "easy"
+        enemyType = "easy";
+      } else {
+        // Después del décimo enemigo, alternar entre "easy" y "medium" aleatoriamente
+        enemyType = Math.random() < 0.5 ? "easy" : "medium";
+      }
+      enemyCount++;
+      let enemy = new Enemy(gameArea, enemyType);
 
       // Suscribirse a los cambios en el enemigo para actualizar su DOM
       enemy.subscribe((data) => {
