@@ -33,13 +33,17 @@ let gameLoop;
 function gameOver() {
   // logToConsole("¡Game Over! Has chocado con un enemigo.");
   clearInterval(gameLoop); // Detener el bucle del juego
-  mostrarModal("¡Game Over! Has chocado con un enemigo.", confirmarReinicio, true)
+  mostrarModal(
+    "¡Game Over! Has chocado con un enemigo.",
+    confirmarReinicio,
+    true
+  );
 }
 
 //PAUSAR JUEGO CON MODAL
 // Variable para controlar el estado de pausa
 let isGamePaused = false;
-let lastPlayerPosition = { x: 0, y: 0 };  // Guardamos la última posición conocida del jugador
+let lastPlayerPosition = { x: 0, y: 0 }; // Guardamos la última posición conocida del jugador
 
 // Escuchar el evento `keyup` para pausar el juego
 window.addEventListener("keyup", (event) => {
@@ -50,19 +54,22 @@ window.addEventListener("keyup", (event) => {
       reanudarJuego();
     } else {
       pausarJuego();
-      mostrarModal("¿Está seguro de que desea salir del juego?", confirmarSalida, false);
+      mostrarModal(
+        "¿Está seguro de que desea salir del juego?",
+        confirmarSalida,
+        false
+      );
     }
   }
 });
-
 
 // Función para pausar el juego
 function pausarJuego() {
   clearInterval(gameLoop); // Detener el bucle del juego
   isGamePaused = true;
   lastPlayerPosition = {
-    x: player.x,  // Asumimos que `player.x` y `player.y` son las posiciones del jugador
-    y: player.y
+    x: player.x, // Asumimos que `player.x` y `player.y` son las posiciones del jugador
+    y: player.y,
   };
 }
 
@@ -97,10 +104,10 @@ function mostrarModal(mensaje, onConfirm, esGameOver = false) {
   confirmButton.onclick = onConfirm;
   cancelButton.onclick = () => {
     if (esGameOver) {
-      confirmarSalida();  // Si es Game Over y elige salir, redirige
+      confirmarSalida(); // Si es Game Over y elige salir, redirige
     } else {
       cerrarModal();
-      reanudarJuego();  // Si elige cancelar, se reanuda el juego
+      reanudarJuego(); // Si elige cancelar, se reanuda el juego
     }
   };
 
@@ -111,7 +118,6 @@ function mostrarModal(mensaje, onConfirm, esGameOver = false) {
 function confirmarReinicio() {
   location.reload(); // Recargar la página para reiniciar la partida
 }
-
 
 // Función para cerrar el modal
 function cerrarModal() {
@@ -128,22 +134,28 @@ gameLoop = setInterval(() => {
   }
 }, 10);
 
-
 // FIN PAUSAR JUEGO CON MODAL
 
 // Función para crear enemigos en intervalos
 function spawnEnemies() {
-  // Generar 3 enemigos faciles inicialmente
-  for (let i = 0; i < 3; i++) {
-    let enemy = new Enemy(gameArea, "easy");
+  // Generar 3 enemigos fáciles con un intervalo de 1 segundo entre cada uno
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+      let enemy = new Enemy(gameArea, "easy");
 
-    // Suscribirse a los cambios en el enemigo para actualizar su DOM
-    enemy.subscribe((data) => {
-      if (data.isAlive === false) return; // Si el enemigo está muerto, no hacer nada
-      enemy.domElement.style.left = data.x + "px";
-      enemy.domElement.style.top = data.y + "px";
-    });
-    enemies.push(enemy);
+      // Suscribirse a los cambios en el enemigo para actualizar su DOM
+      enemy.subscribe((data) => {
+        if (data.isAlive === false) {
+          // Si el enemigo está muerto, eliminarlo de la lista de enemigos
+          enemies.splice(enemies.indexOf(enemy), 1);
+        } else {
+          enemy.domElement.style.left = data.x + "px";
+          enemy.domElement.style.top = data.y + "px";
+        }
+      });
+
+      enemies.push(enemy);
+    }, i * 1000); // 1000 ms de intervalo entre cada creación
   }
 }
 

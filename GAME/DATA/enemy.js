@@ -35,7 +35,7 @@ class Enemy extends Observable {
     
 
     // Colocar al enemigo en la esquina superior derecha
-    this.x = this.gameArea.offsetWidth;
+    // this.x = this.gameArea.offsetWidth;
     this.y = 0; // Siempre en la parte superior
 
     enemy.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
@@ -58,6 +58,7 @@ class Enemy extends Observable {
   }
 
   hit() {
+    if (!this.isAlive) return; // Prevenir múltiples llamadas
     this.isAlive = false;
     this.domElement.remove();
     this.notify({ isAlive: this.isAlive });

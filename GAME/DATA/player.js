@@ -12,17 +12,32 @@ class Player extends Observable {
     this.domElement = this.createPlayer(gameArea);
   }
 
-  createPlayer(gameArea) {
+  createPlayer() {
     const player = document.createElement("div");
     player.id = "player";
     player.classList.add("player");
+    // Colocar al enemigo en la esquina superior derecha
+    //en la parte inferior
+    //en el medio de la pantalla
+    this.x = this.gameArea.offsetWidth / 2 - 50; // Centro horizontal
+    this.y = this.gameArea.offsetHeight - 100; // 100px from the bottom
+
+    player.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
+    player.style.left = this.x + "px";
+    player.style.top = this.y + "px";
+
     this.gameArea.appendChild(player);
     return player;
   }
 
   move(direction) {
     // Remove any previous rotation classes to avoid conflicts
-    this.domElement.classList.remove("rotateRight", "rotateLeft", "rotateUp", "rotateDown");
+    this.domElement.classList.remove(
+      "rotateRight",
+      "rotateLeft",
+      "rotateUp",
+      "rotateDown"
+    );
 
     switch (direction) {
       case "right":
@@ -51,7 +66,6 @@ class Player extends Observable {
         break;
     }
     this.notify({ x: this.x, y: this.y, isAlive: this.isAlive });
-
   }
 
   // fire(mouseX, mouseY) {
