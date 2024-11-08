@@ -13,10 +13,6 @@
     /* Empuja el footer al fondo */
 }
 
-/* _________________________CABECERA_________________________ */
-
-/* _________________________MAIN_________________________ */
-
 h2 {
     text-align: center;
     font-size: 1.5em;
@@ -39,8 +35,6 @@ h2 {
     /* Ajusta al ancho deseado (90% del contenedor principal) */
     max-width: 1400px;
     /* Controla el ancho máximo para pantallas grandes */
-    overflow: hidden;
-    /* Evita el scroll en el contenedor principal */
 }
 
 /* SCROLL */
@@ -156,4 +150,14 @@ tr {
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
-/*_________________________FOOTER_________________________*/
+@media (max-width: 600px) {
+
+    table th {
+        font-size: 14px;
+    }
+    
+    table td {
+        font-size: 11px;
+    }
+
+}

@@ -51,7 +51,7 @@ export class GestorUsuarios {
           "Juan",
           "juan@gmail.com",
           "juan1",
-          85,
+          999999999,
           "2023-10-25",
           "Latinoamérica"
         ),
