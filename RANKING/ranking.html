@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking</title>
+    <link rel="stylesheet" href="../UTILS/BODY/body.css" />
+    <link rel="stylesheet" href="ranking.css" />
+    <link rel="stylesheet" href="../UTILS/FOOTER/footer.css" />
+    <link rel="stylesheet" href="../UTILS/NAVBAR/navbar.css" />
+    <link rel="icon" href="../SOURCE/AlienLogo2.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ranking</title>
-  <link rel="stylesheet" href="../UTILS/BODY/body.css">
-  <link rel="stylesheet" href="ranking.css" />
-  <link rel="stylesheet" href="../UTILS/FOOTER/footer.css" />
-  <link rel="stylesheet" href="../UTILS/NAVBAR/navbar.css" />
-  <link rel="icon" href="../SOURCE/AlienLogo2.png" type="image/png">
-</head>
-
-<body>
-  <div class="container">
-    <header>
-      <div id="navbar"></div>
-      <script type="module" src="../UTILS/NAVBAR/navbar.js"></script>
-    </header>
-    <div class="main">
-      <h2>Tabla de Puntuación</h2>
-      <div id="tabla-container">
-        <table>
-          <thead></thead>
-          <tbody></tbody>
-        </table>
+  <body>
+    <div class="container">
+      <header>
+        <div id="navbar"></div>
+        <script type="module" src="../UTILS/NAVBAR/navbar.js"></script>
+      </header>
+      <div class="main">
+        <h2>Tabla de Puntuación</h2>
+        <div id="tabla-container">
+          <table>
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
+      <footer id="footer">
+        <script src="../UTILS/FOOTER/footer.js"></script>
+        <script type="module" src="ranking.js"></script>
+      </footer>
     </div>
-    <footer id="footer">
-      <script src="../UTILS/FOOTER/footer.js"></script>
-      <script type="module" src="ranking.js"></script>
-    </footer>
-  </div>
-</body>
-
+  </body>
 </html>
