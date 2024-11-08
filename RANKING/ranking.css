@@ -17,18 +17,18 @@ h2 {
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 20px;
-    /* Espacio debajo del título */
     color: white;
-    /* Color del texto */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
 .main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    position: relative;
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Centrado horizontal de los elementos */
+    justify-content: center; /* Centrado vertical de los elementos */
+    padding: 20px 0;
 }
+
 
 #tabla-container {
     width: 90%;
@@ -85,10 +85,6 @@ table td {
     text-align: center;
     /* Alinear el texto a la izquierda */
     overflow: hidden;
-    /* Ocultar el contenido que sobrepasa la celda */
-    white-space: nowrap;
-    /* Evitar que el texto se divida en varias líneas */
-    text-overflow: ellipsis;
 }
 
 table th {
@@ -155,9 +151,48 @@ tr {
     table th {
         font-size: 14px;
     }
-    
+
     table td {
         font-size: 11px;
+    }
+
+    table {
+        border: 2px solid #00ff00;
+    }
+
+    #eliminar-btn {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        padding: 10px;
+        font-size: 1.5em;
+        border: 3px solid #00ff00;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+        text-shadow: 0 0 3px #00ff00, 0 0 5px #00ff00;
+    }
+
+    /* Contenedor del scroll horizontal */
+    #tabla-container {
+        overflow-x: auto; /* Scroll horizontal general */
+        display: block;
+        scrollbar-width: thin;
+    }
+
+    /* Scroll horizontal */
+    #tabla-container::-webkit-scrollbar {
+        height: 12px;
+    }
+
+    #tabla-container::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+
+    #tabla-container::-webkit-scrollbar-thumb {
+        background: #00ff00;
+        border-radius: 10px;
     }
 
 }
