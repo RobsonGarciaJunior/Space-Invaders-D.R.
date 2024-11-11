@@ -41,8 +41,7 @@ function reanudarJuego() {
     if (!isGamePaused) {
       movePlayer(); // Mover el jugador solo si el juego no está en pausa
       moveEnemies(); // Mover enemigos solo si el juego no está en pausa
-      moveMissiles(enemies);
-      setInterval(spawnEnemies, 5000);
+      moveMissiles(enemies)
     }
   }, 10);
 }
