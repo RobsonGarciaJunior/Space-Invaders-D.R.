@@ -62,11 +62,9 @@ function spawnEnemies() {
       });
 
       enemies.push(enemy);
-    }, i * 500); // 1000 ms de intervalo entre cada creación
+    }, i * 700); // 1000 ms de intervalo entre cada creación
   }
 }
 
 // Generar un enemigo inicialmente
 spawnEnemies();
-// Generar enemigos cada 5 segundos
-setInterval(spawnEnemies, 5000);

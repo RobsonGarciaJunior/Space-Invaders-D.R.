@@ -42,6 +42,7 @@ function reanudarJuego() {
       movePlayer(); // Mover el jugador solo si el juego no está en pausa
       moveEnemies(); // Mover enemigos solo si el juego no está en pausa
       moveMissiles(enemies);
+      setInterval(spawnEnemies, 5000);
     }
   }, 10);
 }
@@ -96,6 +97,13 @@ gameLoop = setInterval(() => {
     moveMissiles(enemies); // Pasar el array de enemigos a la función de misiles
   }
 }, 10);
+
+// Intervalo separado para generar enemigos cada 5 segundos (5000 milisegundos)
+setInterval(() => {
+  if (!isGamePaused) {
+    spawnEnemies();
+  }
+}, 5000);
 
 function actualizarPuntuacion() {
   //
