@@ -2,32 +2,98 @@ footer {
     border: 4px solid #00ff00;
     /* Borde verde brillante */
     padding: 10px;
-    /* Alineándola a la derecha */
+    /* Espaciado alrededor del contenido */
     background-color: rgba(0, 0, 0, 0.8);
     /* Fondo negro semi-transparente */
     color: #ffffff;
     /* Color del texto en blanco */
     font-family: 'Press Start 2P', cursive;
-    /* Fuente de estilo retro */
+    /* Fuente estilo retro */
     font-size: 14px;
     /* Tamaño de fuente */
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
     /* Sombra para el texto */
+    display: flex;
+    justify-content: space-between;
+    /* Coloca los elementos de manera que se distribuyan a lo largo del footer */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    padding: 10px 20px;
+    /* Aumenta el espacio interior en ambos lados */
+}
+
+/* Estilo para los elementos del footer */
+footer div {
+    display: flex;
+    align-items: center;
+    /* Centra el contenido dentro de cada div */
+}
+
+/* Estilo de los enlaces (como Documentación CSS) */
+footer a {
+    color: #00ff00;
+    /* Verde brillante */
+    font-size: 14px;
+    /* Tamaño de fuente */
+    text-decoration: none;
+    /* Elimina el subrayado */
+    transition: color 0.3s, text-shadow 0.3s;
+    /* Efecto de transición */
+}
+
+/* Efecto hover para los enlaces */
+footer a:hover {
+    color: #00cc00;
+    /* Cambia el color verde en hover */
+    text-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00;
+    /* Resplandor verde en hover */
+}
+
+/* Contenedor de íconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    /* Centra los iconos horizontalmente */
+    gap: 15px;
+    /* Espacio entre los iconos */
+}
+
+/* Estilo de los iconos de redes sociales */
+.social-icons a {
+    color: #00ff00;
+    /* Color verde brillante */
+    font-size: 25px;
+    /* Tamaño de los iconos */
+    text-decoration: none;
+    /* Elimina el subrayado */
+    transition: color 0.3s, text-shadow 0.3s;
+    /* Efecto de transición para los iconos */
+}
+
+/* Efecto hover para los iconos */
+.social-icons a:hover {
+    color: #00cc00;
+    /* Cambio de color en hover */
+    text-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00;
+    /* Sombra resplandeciente cuando se pasa el ratón */
 }
 
 /* Responsivo para pantallas pequeñas */
 @media (max-width: 600px) {
-
     footer {
-        bottom: 0;
-        border: 2px solid #00ff00;
-        padding: 10px;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #ffffff;
-        font-family: 'Press Start 2P', cursive;
         font-size: 9px;
+        /* Reduce el tamaño de la fuente */
         text-align: center;
-        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        /* Centra el texto en pantallas pequeñas */
     }
 
+    .social-icons {
+        gap: 10px;
+        /* Reduce el espacio entre iconos en pantallas pequeñas */
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        /* Reduce el tamaño de los iconos en pantallas pequeñas */
+    }
 }

@@ -21,7 +21,7 @@ function mostrarUsuarioActivo() {
   const usuarioActivo = instanciaUnica.obtenerUsuarioLoggeado();
 
   if (usuarioActivo) {
-    usuarioDiv = crearUsuarioDiv(usuarioActivo.nombre);
+    usuarioDiv = crearUsuarioDiv(usuarioActivo.imagen);
     actualizarUbicacionUsuarioDiv();
 
     usuarioButton.addEventListener("click", () => {
@@ -31,12 +31,21 @@ function mostrarUsuarioActivo() {
 }
 
 // Crea el contenedor del usuario y el menú desplegable
-function crearUsuarioDiv(nombreUsuario) {
+function crearUsuarioDiv(imagenUsuario) {
   const div = document.createElement("div");
   div.classList.add("usuario-activo-dropdown");
 
+  // Crear el botón del usuario con la imagen
   usuarioButton = document.createElement("button");
-  usuarioButton.textContent = `¡Hola, ${nombreUsuario}!`;
+
+  // Crear el elemento de la imagen del usuario
+  const usuarioImagen = document.createElement("img");
+  usuarioImagen.src = imagenUsuario; // Asignar la URL de la imagen del usuario
+  usuarioImagen.alt = "Imagen del usuario";
+  usuarioImagen.classList.add("usuario-imagen");
+
+  // Añadir la imagen y el texto al botón del usuario
+  usuarioButton.appendChild(usuarioImagen);
   usuarioButton.classList.add("usuario-button");
 
   userDropDownMenu = document.createElement("div");
