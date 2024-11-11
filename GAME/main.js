@@ -16,18 +16,6 @@ let missiles = [];
 // Variables para la puntuación
 let score = 0; // Detectar clic del ratón para disparar
 
-// Función para registrar los mensajes en la consola del juego
-function logToConsole(message) {
-  const newMessage = document.createElement("p");
-  newMessage.textContent = message;
-  consoleOutput.appendChild(newMessage);
-  // If the console content exceeds the visible area, remove the oldest line
-  while (consoleOutput.scrollHeight > consoleOutput.clientHeight) {
-    consoleOutput.removeChild(consoleOutput.firstChild);
-  }
-  // consoleOutput.scrollTop = consoleOutput.scrollHeight; // Mantener el scroll al final
-}
-
 //Variable encargada de controlar el juego por si se pausa o reanuda
 let gameLoop;
 
@@ -82,8 +70,3 @@ function spawnEnemies() {
 spawnEnemies();
 // Generar enemigos cada 5 segundos
 setInterval(spawnEnemies, 5000);
-
-// Mensaje inicial en la consola
-logToConsole(
-  "Usa W, A, S, D para mover el objeto y haz clic para disparar misiles."
-);

@@ -13,6 +13,9 @@ window.addEventListener("keyup", (event) => {
     } else {
       pausarJuego();
       mostrarModal(
+        "Usa W, A, S, D para mover el objeto y haz clic para disparar misiles."
+        + "<br>" + "<br>"
+        +
         "¿Está seguro de que desea salir del juego?",
         confirmarSalida,
         false
@@ -56,7 +59,7 @@ function mostrarModal(mensaje, onConfirm, esGameOver = false) {
   const confirmButton = document.getElementById("confirmButton");
   const cancelButton = document.getElementById("cancelButton");
 
-  modalContent.querySelector("p").textContent = mensaje;
+  modalContent.querySelector("p").innerHTML = mensaje;
   confirmButton.textContent = esGameOver ? "Reiniciar" : "Confirmar";
   cancelButton.textContent = esGameOver ? "Salir" : "Cancelar";
 

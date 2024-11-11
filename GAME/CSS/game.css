@@ -57,33 +57,6 @@ body {
     z-index: 10;
 }
 
-/* Style for the console area */
-#console {
-    max-height: 35px;
-    /* Altura máxima del área de la consola */
-    overflow-y: auto;
-    /* Scroll vertical si el contenido es más grande */
-    border: 2px solid #00ff00;
-    /* Borde verde brillante */
-    padding: 10px;
-    /* Padding para el área de la consola */
-    position: absolute;
-    /* Posicionamiento de la consola */
-    bottom: 0;
-    /* Posicionándola en la parte inferior */
-    left: 0;
-    /* Alineándola a la izquierda */
-    right: 0;
-    /* Alineándola a la derecha */
-    background-color: rgba(0, 0, 0, 0.2);
-    /* Fondo negro semi-transparente */
-    color: #ffffff;
-    font-size: 14px;
-    /* Tamaño de fuente */
-    text-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00;
-    /* Sombra para el texto */
-}
-
 /* Estilo para el modal de confirmación */
 .modal {
     display: none;
@@ -146,4 +119,18 @@ body {
     /* Color más oscuro al hacer clic */
     transform: scale(0.95);
     /* Reducir un poco al hacer clic */
+}
+
+@media (max-width: 600px) {
+
+    .modal-content {
+        font-size: 12px;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .modal-content button {
+        font-size: 10px;
+    }
+
 }
