@@ -41,6 +41,8 @@ body {
     /* Asegúrate de que esté encima de otros elementos */
     transform: none;
     /* Elimina el translateX para evitar desplazamientos innecesarios */
+    pointer-events: none; /* Desactiva los eventos de puntero, evitando clics y selección */
+    user-select: none; /* Deshabilita la selección de texto */
 }
 
 

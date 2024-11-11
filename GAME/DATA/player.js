@@ -25,6 +25,7 @@ class Player extends Observable {
     player.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
     player.style.left = this.x + "px";
     player.style.top = this.y + "px";
+    player.style.zIndex = "7"; // Asegura que el jugador se muestre encima
 
     this.gameArea.appendChild(player);
     return player;
