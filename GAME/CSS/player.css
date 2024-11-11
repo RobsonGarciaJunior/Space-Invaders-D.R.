@@ -26,3 +26,12 @@
     transform: rotate(180deg);
     /* Rotate 180 degrees, pointing downwards */
 }
+
+@media (max-width: 600px) {
+    .player {
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+        border-radius: 5px;
+    }
+}

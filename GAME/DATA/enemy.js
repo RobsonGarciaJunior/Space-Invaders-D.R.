@@ -34,16 +34,16 @@ class Enemy extends Observable {
     }
 
     // // Colocar al enemigo en la esquina superior derecha
-    // // this.x = this.gameArea.offsetWidth;
-    // this.y = 0; // Siempre en la parte superior
+    this.x = this.gameArea.offsetWidth;
+    this.y = 0; // Siempre en la parte superior
 
     // Obtener las coordenadas de la nave nodriza
-    const mothership = document.getElementById("mothership");
-    const mothershipRect = mothership.getBoundingClientRect();
+    // const mothership = document.getElementById("mothership");
+    // const mothershipRect = mothership.getBoundingClientRect();
 
-    // Colocar el enemigo en una posición aleatoria dentro de la nave nodriza
-    this.x = mothershipRect.left + Math.random() * mothershipRect.width;
-    this.y = mothershipRect.top + Math.random() * mothershipRect.height;
+    // // Colocar el enemigo en una posición aleatoria dentro de la nave nodriza
+    // this.x = mothershipRect.left + Math.random() * mothershipRect.width;
+    // this.y = mothershipRect.top + Math.random() * mothershipRect.height;
     enemy.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
     enemy.style.left = this.x + "px";
     enemy.style.top = this.y + "px";

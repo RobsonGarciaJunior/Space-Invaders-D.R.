@@ -1,7 +1,70 @@
-gameArea.addEventListener("click", (event) => {
-  fireMissile(event.clientX, event.clientY);
+let isShooting = false; // Estado de disparo
+let lastShotTime = 0; // Tiempo del último disparo
+let shootInterval;
+let mouseX = 0;
+let mouseY = 0;
+
+// Función para iniciar el disparo continuo
+function startShooting(x, y) {
+  isShooting = true;
+  mouseX = x;
+  mouseY = y;
+
+  shootInterval = setInterval(() => {
+    const currentTime = Date.now();
+    if (currentTime - lastShotTime >= 400) {
+      // 300 ms = 0.3 segundos
+      fireMissile(mouseX, mouseY); // Usar la posición actual del ratón o toque
+      lastShotTime = currentTime;
+    }
+  }, 10);
+}
+
+// Función para detener el disparo
+function stopShooting() {
+  isShooting = false;
+  clearInterval(shootInterval);
+}
+
+// Escuchar `mousedown` y `touchstart` para iniciar el disparo
+gameArea.addEventListener("mousedown", (event) => {
+  if (event.button === 0) {
+    // Botón izquierdo del ratón
+    startShooting(event.clientX, event.clientY);
+  }
 });
 
+gameArea.addEventListener("touchstart", (event) => {
+  const touch = event.touches[0];
+  startShooting(touch.clientX, touch.clientY);
+});
+
+// Escuchar `mouseup` y `touchend` para detener el disparo
+gameArea.addEventListener("mouseup", (event) => {
+  if (event.button === 0) {
+    stopShooting();
+  }
+});
+
+gameArea.addEventListener("touchend", () => {
+  stopShooting();
+});
+
+// Escuchar el movimiento para actualizar la posición en tiempo real
+gameArea.addEventListener("mousemove", (event) => {
+  if (isShooting) {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+  }
+});
+
+gameArea.addEventListener("touchmove", (event) => {
+  if (isShooting) {
+    const touch = event.touches[0];
+    mouseX = touch.clientX;
+    mouseY = touch.clientY;
+  }
+});
 // Función para disparar un misil hacia la posición del ratón
 function fireMissile(mouseX, mouseY) {
   //Creamos el objeto bala que dispara el usuario pasandole la posicion del usuario
@@ -26,7 +89,7 @@ function fireMissile(mouseX, mouseY) {
       missile.domElement.style.top = data.y + "px";
     }
   });
-  
+
   // Guardar la información del misil
   missiles.push(missile);
 }

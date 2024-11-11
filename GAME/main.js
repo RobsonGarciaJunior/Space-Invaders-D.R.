@@ -47,7 +47,7 @@ let enemyCount = 0; // Contador global para llevar el registro de los enemigos c
 
 // Función para crear enemigos en intervalos
 function spawnEnemies() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     setTimeout(() => {
       // Determinar el tipo de enemigo en función del número de enemigos creados
       let enemyType;
@@ -74,7 +74,7 @@ function spawnEnemies() {
       });
 
       enemies.push(enemy);
-    }, i * 1000); // 1000 ms de intervalo entre cada creación
+    }, i * 500); // 1000 ms de intervalo entre cada creación
   }
 }
 

@@ -9,3 +9,13 @@
     background-repeat: no-repeat;
     /* Color of the missile */
 }
+
+@media (max-width: 600px) {
+
+    .missile {
+        width: 15px;
+        /* Width of the missile */
+        height: 15px;
+        /* Height of the missile */
+    }
+}

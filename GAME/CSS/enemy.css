@@ -12,6 +12,7 @@
     /* Prevent repeat */
 }
 
+
 .enemy-medium {
     position: absolute;
     width: 50px;
@@ -28,9 +29,9 @@
 
 .enemy-hard {
     position: absolute;
-    width: 30px;
+    width: 90px;
     /* Width of the enemy */
-    height: 30px;
+    height: 90px;
     /* Height of the enemy */
     background-image: url('images/ovni.png');
     /* URL of the enemy's spaceship image */
@@ -38,4 +39,26 @@
     /* Cover the entire area */
     background-repeat: no-repeat;
     /* Prevent repeat */
+}
+
+@media (max-width: 600px) {
+
+    .enemy-easy {
+        width: 40px;
+        /* Width of the enemy */
+        height: 40px;
+        /* Height of the enemy */
+    }
+    .enemy-medium {
+        width: 30px;
+        /* Width of the enemy */
+        height: 30px;
+        /* Height of the enemy */
+    }
+    .enemy-hard {
+        width: 50px;
+        /* Width of the enemy */
+        height: 50px;
+        /* Height of the enemy */
+    }
 }

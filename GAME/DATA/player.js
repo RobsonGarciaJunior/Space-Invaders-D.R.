@@ -5,7 +5,7 @@ class Player extends Observable {
     super();
     this.x = 0;
     this.y = 0;
-    this.speed = 15;
+    this.speed = 8;
     this.isAlive = true;
     this.gameArea = gameArea;
     this.rotation = 0;
@@ -68,21 +68,24 @@ class Player extends Observable {
     this.notify({ x: this.x, y: this.y, isAlive: this.isAlive });
   }
 
-  // // Método para rotar el jugador hacia el ratón (sin disparar)
-  // rotateToMouse(mouseX, mouseY) {
-  //   // Calcular el ángulo entre la posición del jugador y la posición del ratón
-  //   const deltaX = mouseX - this.x;
-  //   const deltaY = mouseY - this.y;
-  //   const angle = Math.atan2(deltaY, deltaX); // Calcular el ángulo en radianes
-  //   const rotationAngle = (angle * 180) / Math.PI + 90; // Convertir a grados y ajustar (corrección de rotación)
+  rotateToMouse(mouseX, mouseY) {
+    // Calcular el centro del jugador para una rotación precisa
+    const centerX = this.x + this.domElement.offsetWidth / 2;
+    const centerY = this.y + this.domElement.offsetHeight / 2;
 
-  //   // Aplicar la rotación al jugador
-  //   this.rotation = rotationAngle;
-  //   this.domElement.style.transform = `rotate(${this.rotation}deg)`; // Actualizar la rotación en el DOM
+    // Calcular el ángulo entre el centro del jugador y la posición del toque o ratón
+    const deltaX = mouseX - centerX;
+    const deltaY = mouseY - centerY;
+    const angle = Math.atan2(deltaY, deltaX); // Calcular el ángulo en radianes
+    const rotationAngle = (angle * 180) / Math.PI + 90; // Convertir a grados y ajustar (corrección de rotación)
 
-  //   // Notificar a los observadores que la rotación ha cambiado
-  //   this.notify({ rotation: this.rotation });
-  // }
+    // Actualizar solo si la rotación ha cambiado, para evitar actualizaciones innecesarias
+    if (this.rotation !== rotationAngle) {
+      this.rotation = rotationAngle;
+      this.domElement.style.transform = `rotate(${this.rotation}deg)`; // Actualizar la rotación en el DOM
+      this.notify({ rotation: this.rotation });
+    }
+  }
 
   hit() {
     isAlive = false;
