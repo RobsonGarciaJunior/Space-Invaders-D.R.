@@ -121,6 +121,28 @@ body {
     /* Reducir un poco al hacer clic */
 }
 
+.joystick {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    display: none; /* Oculto por defecto */
+  }
+  
+  .joystick-handle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 @media (max-width: 600px) {
 
     .modal-content {
@@ -136,5 +158,9 @@ body {
     #score-display {
         font-size: 10px;
     }
+
+    .joystick {
+        display: block;
+      }
 
 }

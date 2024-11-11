@@ -126,4 +126,38 @@ function actualizarPuntuacion() {
     }
   }
 }
+
+//Funciones para la animacion del movimiento del Joistick
+function startMove(event) {
+  event.preventDefault();
+}
+
+function moveJoystick(event) {
+  event.preventDefault();
+
+  const touch = event.touches[0];
+  const rect = joystick.getBoundingClientRect();
+
+  // Calcular posición dentro del área del joystick
+  const x = touch.clientX - rect.left - rect.width / 2;
+  const y = touch.clientY - rect.top - rect.height / 2;
+
+  // Distancia y ángulo del toque en relación al centro del joystick
+  const distance = Math.min(50, Math.sqrt(x * x + y * y));
+  const angle = Math.atan2(y, x);
+
+  // Actualiza la posición del mango del joystick
+  joystickHandle.style.left = `${50 + distance * Math.cos(angle)}%`;
+  joystickHandle.style.top = `${50 + distance * Math.sin(angle)}%`;
+
+  // Guarda la dirección para el movimiento del jugador
+  joystickDirection = { angle, distance };
+}
+
+function endMove() {
+  joystickHandle.style.left = "50%";
+  joystickHandle.style.top = "50%";
+  joystickDirection = { angle: 0, distance: 0 }; // Reset de dirección
+}
+
 // FIN PAUSAR JUEGO CON MODAL
