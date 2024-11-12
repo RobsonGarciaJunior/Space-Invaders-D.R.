@@ -9,8 +9,7 @@
     flex-flow: column wrap;
     flex-grow: 1;
     justify-content: space-between;
-    min-height: 100dvh;
-    /* Empuja el footer al fondo */
+    min-height: 100dvh; /* Empuja el footer al fondo */
 }
 
 h2 {
@@ -24,23 +23,17 @@ h2 {
 .main {
     display: flex;
     flex-direction: column;
-    /* Alineación vertical */
     align-items: center;
-    /* Centrado horizontal de los elementos */
     justify-content: center;
-    /* Centrado vertical de los elementos */
     padding: 20px 0;
 }
 
-
 #tabla-container {
     width: 90%;
-    /* Ajusta al ancho deseado (90% del contenedor principal) */
-    max-width: 1400px;
-    /* Controla el ancho máximo para pantallas grandes */
+    max-width: 1400px; /* Ajusta a pantallas grandes */
 }
 
-/* SCROLL */
+/* Scroll vertical */
 .scrollable-tbody {
     display: block;
     max-height: calc(5 * 75px);
@@ -49,18 +42,15 @@ h2 {
     scrollbar-color: #00ff00 rgba(0, 0, 0, 0.5);
 }
 
-/* Ancho del Scroll */
 .scrollable-tbody::-webkit-scrollbar {
     width: 12px;
 }
 
-/* Fondo */
 .scrollable-tbody::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
-/* Parte móvil del scroll */
 .scrollable-tbody::-webkit-scrollbar-thumb {
     background: #00ff00;
     border-radius: 10px;
@@ -70,38 +60,28 @@ h2 {
     background: #009900;
 }
 
-/* FIN SCROLL */
-
 table {
     width: 100%;
-    /* La tabla ocupará todo el ancho del contenedor */
     border: 4px solid #00ff00;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-
-table th,
-table td {
+table th, table td {
     padding: 10px;
-    /* Espaciado dentro de las celdas */
     text-align: center;
-    /* Alinear el texto a la izquierda */
     overflow: hidden;
 }
 
 table th {
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 10px;
     font-weight: bold;
-    font-family: 'Press Start 2P', cursive;
     font-size: 1.5em;
     color: #ffffff;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
 table td {
-    padding: 10px;
     color: #ffffff;
     border-bottom: 1px solid #ddd;
     font-size: 1.1em;
@@ -109,24 +89,17 @@ table td {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-
-/* Necesario para alinear correctamente las filas */
+/* Necesario para el scroll */
 tbody {
     display: block;
-    /* Permite que el scroll funcione correctamente */
     width: 100%;
-    /* Mantiene el ancho de la tabla */
 }
 
 tr {
     display: table;
-    /* Asegura que las filas se comporten como filas de tabla */
     width: 100%;
-    /* Mantiene el ancho de cada fila */
     table-layout: fixed;
-    /* Permite un diseño fijo */
     height: 50px;
-    /* Establece la altura de cada fila */
 }
 
 #eliminar-btn {
@@ -149,8 +122,8 @@ tr {
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
-
     table th {
         font-size: 14px;
     }
@@ -164,26 +137,18 @@ tr {
     }
 
     #eliminar-btn {
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #ffffff;
         padding: 10px;
         font-size: 0.9em;
         border: 3px solid #00ff00;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-        width: 100%;
         text-shadow: 0 0 3px #00ff00, 0 0 5px #00ff00;
     }
 
-    /* Contenedor del scroll horizontal */
     #tabla-container {
         overflow-x: auto;
         display: block;
         scrollbar-width: thin;
     }
 
-    /* Scroll horizontal */
     #tabla-container::-webkit-scrollbar {
         height: 12px;
     }
@@ -197,5 +162,4 @@ tr {
         background: #00ff00;
         border-radius: 10px;
     }
-
 }

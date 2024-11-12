@@ -1,4 +1,4 @@
-import GestorUsuarios from "../../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+import GestorUsuarios from "../../DATA/gestorUsuarios.js";
 const instanciaUnica = GestorUsuarios.getInstance();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let usuarioDiv, usuarioButton, userDropDownMenu;
 
-// Función para verificar y mostrar el usuario activo con un menú desplegable
+// Muestra el usuario activo con menú desplegable si existe
 function mostrarUsuarioActivo() {
   const usuarioActivo = instanciaUnica.obtenerUsuarioLoggeado();
 
@@ -35,26 +35,20 @@ function crearUsuarioDiv(imagenUsuario) {
   const div = document.createElement("div");
   div.classList.add("usuario-activo-dropdown");
 
-  // Crear el botón del usuario con la imagen
   usuarioButton = document.createElement("button");
 
-  // Crear el elemento de la imagen del usuario
   const usuarioImagen = document.createElement("img");
-  usuarioImagen.src = imagenUsuario; // Asignar la URL de la imagen del usuario
+  usuarioImagen.src = imagenUsuario;
   usuarioImagen.alt = "Imagen del usuario";
   usuarioImagen.classList.add("usuario-imagen");
 
-  // Añadir la imagen y el texto al botón del usuario
   usuarioButton.appendChild(usuarioImagen);
   usuarioButton.classList.add("usuario-button");
 
   userDropDownMenu = document.createElement("div");
   userDropDownMenu.classList.add("dropdown-menu");
 
-  const editarPerfil = crearOpcionMenu(
-    "Editar Perfil",
-    "../PROFILE/profile.html"
-  );
+  const editarPerfil = crearOpcionMenu("Editar Perfil", "../PROFILE/profile.html");
   const logout = crearOpcionMenu("Logout", "#");
   logout.addEventListener("click", () => instanciaUnica.cerrarSesion());
 
@@ -73,7 +67,7 @@ function crearOpcionMenu(texto, href) {
   return opcion;
 }
 
-// Función para actualizar la ubicación de usuarioDiv dependiendo del tamaño de la pantalla
+// Ubica usuarioDiv dependiendo del tamaño de la pantalla
 function actualizarUbicacionUsuarioDiv() {
   const navbarButtons = document.getElementsByClassName("navbar-buttons")[0];
   const submenu = document.getElementById("subMenu");
@@ -88,7 +82,6 @@ function actualizarUbicacionUsuarioDiv() {
   } else {
     submenu.style.display = "none";
     navbarButtons.appendChild(usuarioDiv);
-    // submenu.appendChild(usuarioDiv);
   }
 }
 

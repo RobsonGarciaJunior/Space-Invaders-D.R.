@@ -16,12 +16,10 @@ body {
     justify-content: space-between;
 }
 
-/* Style for the game area */
 #game-area {
     position: relative;
     width: 100%;
     height: 100vh;
-    /* Esto asegura que ocupe toda la altura de la pantalla */
     background-image: url("../SOURCE/gameBackgroundSpace.gif");
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,22 +29,15 @@ body {
 #mothership {
     position: absolute;
     top: -50px;
-    /* Ajusta según la distancia deseada desde la parte superior */
     right: -100px;
-    /* Valor negativo para que sobresalga del borde derecho */
     width: 350px;
-    /* Ajusta según el tamaño que prefieras */
     height: auto;
     z-index: 5;
-    /* Asegúrate de que esté encima de otros elementos */
     transform: none;
-    /* Elimina el translateX para evitar desplazamientos innecesarios */
-    pointer-events: none; /* Desactiva los eventos de puntero, evitando clics y selección */
-    user-select: none; /* Deshabilita la selección de texto */
+    pointer-events: none;
+    user-select: none;
 }
 
-
-/* Style for the score display */
 #score-display {
     position: absolute;
     top: 10px;
@@ -59,30 +50,23 @@ body {
     z-index: 10;
 }
 
-/* Estilo para el modal de confirmación */
 .modal {
     display: none;
     position: fixed;
     z-index: 100;
-    /* Más alto que otros elementos para asegurar que esté visible */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     align-content: center;
     background-color: rgba(0, 0, 0, 0.7);
-    /* Fondo negro más oscuro y semi-transparente */
 }
 
 .modal-content {
     background-color: rgba(0, 0, 0, 0.9);
-    /* Fondo oscuro para ajustarse al tema espacial */
     color: #00ff00;
-    /* Texto verde brillante */
     border: 2px solid #00ff00;
-    /* Borde verde brillante */
     font-size: 20px;
-    /* Tamaño de fuente */
     text-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00;
     margin: auto;
     padding: 20px;
@@ -91,10 +75,8 @@ body {
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-    /* Sombra verde suave */
 }
 
-/* Estilos para los botones del modal */
 .modal-content button {
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
@@ -118,9 +100,7 @@ body {
 
 .modal-content button:active {
     background-color: #005f00;
-    /* Color más oscuro al hacer clic */
     transform: scale(0.95);
-    /* Reducir un poco al hacer clic */
 }
 
 .joystick {
@@ -131,10 +111,10 @@ body {
     height: 100px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    display: none; /* Oculto por defecto */
-  }
-  
-  .joystick-handle {
+    display: none;
+}
+
+.joystick-handle {
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -143,10 +123,9 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
 @media (max-width: 600px) {
-
     .modal-content {
         font-size: 12px;
         width: 80%;
@@ -163,6 +142,5 @@ body {
 
     .joystick {
         display: block;
-      }
-
+    }
 }

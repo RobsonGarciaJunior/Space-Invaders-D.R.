@@ -18,17 +18,5 @@ body {
     flex-flow: column wrap;
     flex-grow: 1;
     justify-content: space-between;
-    min-height: 100dvh;
-    /* Empuja el footer al fondo */
-}
-
-/* Responsivo para pantallas pequeñas */
-@media (max-width: 600px) {
-
-    .container {
-    }
-
-    body {
-    }
-
+    min-height: 100dvh; /* Mantiene el footer al fondo */
 }

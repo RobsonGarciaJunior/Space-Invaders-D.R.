@@ -1,6 +1,4 @@
-// Seleccionar los elementos del DOM
 const consoleOutput = document.getElementById("console");
-// const player = document.getElementById("movable-object");
 const gameArea = document.getElementById("game-area");
 const player = new Player(gameArea);
 // Suscribirse a los cambios en el jugador para actualizar su DOM
@@ -14,14 +12,13 @@ player.subscribe((data) => {
 let enemies = [];
 let missiles = [];
 // Variables para la puntuación
-let score = 0; // Detectar clic del ratón para disparar
+let score = 0;
 
 //Variable encargada de controlar el juego por si se pausa o reanuda
 let gameLoop;
 
 // Función para manejar el Game Over
 function gameOver() {
-  // logToConsole("¡Game Over! Has chocado con un enemigo.");
   clearInterval(gameLoop); // Detener el bucle del juego
   mostrarModal(
     "¡Game Over! Has chocado con un enemigo.",
@@ -35,35 +32,35 @@ let enemyCount = 0; // Contador global para llevar el registro de los enemigos c
 
 // Función para crear enemigos en intervalos
 function spawnEnemies() {
-  // for (let i = 0; i < 7; i++) {
-  //   setTimeout(() => {
-  //     // Determinar el tipo de enemigo en función del número de enemigos creados
-  //     let enemyType;
+  for (let i = 0; i < 7; i++) {
+    setTimeout(() => {
+      // Determinar el tipo de enemigo en función del número de enemigos creados
+      let enemyType;
 
-  //     if (enemyCount < 8) {
-  //       // Los primeros 10 enemigos serán de tipo "easy"
-  //       enemyType = "easy";
-  //     } else {
-  //       // Después del décimo enemigo, alternar entre "easy" y "medium" aleatoriamente
-  //       enemyType = Math.random() < 0.5 ? "easy" : "medium";
-  //     }
-  //     enemyCount++;
-  //     let enemy = new Enemy(gameArea, enemyType);
+      if (enemyCount < 8) {
+        // Los primeros 10 enemigos serán de tipo "easy"
+        enemyType = "easy";
+      } else {
+        // Después del décimo enemigo, alternar entre "easy" y "medium" aleatoriamente
+        enemyType = Math.random() < 0.5 ? "easy" : "medium";
+      }
+      enemyCount++;
+      let enemy = new Enemy(gameArea, enemyType);
 
-  //     // Suscribirse a los cambios en el enemigo para actualizar su DOM
-  //     enemy.subscribe((data) => {
-  //       if (data.isAlive === false) {
-  //         // Si el enemigo está muerto, eliminarlo de la lista de enemigos
-  //         enemies.splice(enemies.indexOf(enemy), 1);
-  //       } else {
-  //         enemy.domElement.style.left = data.x + "px";
-  //         enemy.domElement.style.top = data.y + "px";
-  //       }
-  //     });
+      // Suscribirse a los cambios en el enemigo para actualizar su DOM
+      enemy.subscribe((data) => {
+        if (data.isAlive === false) {
+          // Si el enemigo está muerto, eliminarlo de la lista de enemigos
+          enemies.splice(enemies.indexOf(enemy), 1);
+        } else {
+          enemy.domElement.style.left = data.x + "px";
+          enemy.domElement.style.top = data.y + "px";
+        }
+      });
 
-  //     enemies.push(enemy);
-  //   }, i * 700); // 1000 ms de intervalo entre cada creación
-  // }
+      enemies.push(enemy);
+    }, i * 700); // 1000 ms de intervalo entre cada creación
+  }
 }
 
 // Generar un enemigo inicialmente

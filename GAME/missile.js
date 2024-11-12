@@ -13,7 +13,6 @@ function startShooting(x, y) {
   shootInterval = setInterval(() => {
     const currentTime = Date.now();
     if (currentTime - lastShotTime >= 600) {
-      // 300 ms = 0.3 segundos
       fireMissile(mouseX, mouseY); // Usar la posición actual del ratón o toque
       lastShotTime = currentTime;
     }

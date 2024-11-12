@@ -1,4 +1,3 @@
-// Clase Usuario
 export class Usuario {
     constructor(imagen, nombre, email, contrasenna, puntuacion, fecha, region) {
         this.imagen = imagen;
@@ -10,4 +9,3 @@ export class Usuario {
         this.region = region;
     }
 }
-// export default Usuario; // Exportar la clase para usarla en otros módulos

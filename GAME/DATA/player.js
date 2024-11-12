@@ -1,5 +1,3 @@
-//Player.js
-
 class Player extends Observable {
   constructor(gameArea) {
     super();

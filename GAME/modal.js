@@ -118,11 +118,6 @@ function actualizarPuntuacion() {
       );
       usuarioMod.puntuacion = score;
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
-      // mostrarModal(
-      //   "��Has ganado el juego!",
-      //   confirmarReinicio,
-      //   true
-      // ); // Mostrar modal con mensaje de ganador
     }
   }
 }
@@ -159,5 +154,3 @@ function endMove() {
   joystickHandle.style.top = "50%";
   joystickDirection = { angle: 0, distance: 0 }; // Reset de dirección
 }
-
-// FIN PAUSAR JUEGO CON MODAL

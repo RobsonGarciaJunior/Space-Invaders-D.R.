@@ -9,22 +9,18 @@
 
 .rotateLeft {
     transform: rotate(-90deg);
-    /* Rotate 90 degrees to the left */
 }
 
 .rotateRight {
     transform: rotate(90deg);
-    /* Rotate 90 degrees to the right */
 }
 
 .rotateUp {
     transform: rotate(0deg);
-    /* No rotation, pointing upwards */
 }
 
 .rotateDown {
     transform: rotate(180deg);
-    /* Rotate 180 degrees, pointing downwards */
 }
 
 @media (max-width: 600px) {

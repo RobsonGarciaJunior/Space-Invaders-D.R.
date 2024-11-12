@@ -1,4 +1,4 @@
-import GestorUsuarios from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+import GestorUsuarios from "../DATA/gestorUsuarios.js";
 const instanciaUnica = GestorUsuarios.getInstance();
 
 // Manejo del formulario de inicio de sesión

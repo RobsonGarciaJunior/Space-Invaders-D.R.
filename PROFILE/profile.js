@@ -1,4 +1,4 @@
-import GestorUsuarios from "../DATA/gestorUsuarios.js"; // Importar el gestor de usuarios
+import GestorUsuarios from "../DATA/gestorUsuarios.js";
 const instanciaUnica = GestorUsuarios.getInstance();
 const profileForm = document.getElementById("profile_form");
 var imagen = "";
@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const source = urlParams.get("source");
   const usuarioLoggeado = instanciaUnica.obtenerUsuarioLoggeado();
-  // if (source === 'register' && usuarioLoggeado === null) {
   if (usuarioLoggeado === null) {
     document.getElementById("titulo").textContent = "Registro";
     document.getElementById("email").removeAttribute("readonly");
@@ -21,22 +20,19 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector('label[for="password"]').remove();
 
     profileForm.addEventListener("submit", (event) => {
-      event.preventDefault(); // Prevenir el envío del formulario
+      event.preventDefault();
 
       const resultado = instanciaUnica.modificarUsuario(
         document.getElementById("username").value,
         document.getElementById('imagePreview').src,
         document.getElementById("region").value,
         usuarioLoggeado.nombre,
-
       );
 
       if (resultado.status === "success") {
-        // Si el cambio fue exitoso, recargar la página o mostrar mensaje de éxito
         alert(resultado.message);
         window.location.reload();
       } else {
-        // Si hubo un error, mostrar el mensaje en la pantalla
         const errorContainer =
           document.getElementById("errorContainer") ||
           document.createElement("div");
@@ -48,45 +44,39 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   
-  // Define el array de regiones
-const regiones = ["Latinoamérica", "Europa", "Asia", "Norteamérica", "Oceanía", "África"];
+  const regiones = ["Latinoamérica", "Europa", "Asia", "Norteamérica", "Oceanía", "África"];
+  const regionSelect = document.getElementById('region');
 
-// Selecciona el elemento select en el DOM
-const regionSelect = document.getElementById('region');
+  regiones.forEach(region => {
+    const option = document.createElement('option');
+    option.value = region;
+    option.textContent = region;
+    regionSelect.appendChild(option);
+  });
 
-// Agrega cada región como una opción en el select
-regiones.forEach(region => {
-  const option = document.createElement('option'); // Crea una opción
-  option.value = region; // Establece el valor de la opción
-  option.textContent = region; // Establece el texto visible de la opción
+  function previewImage(event) {
+    const imagePreview = document.getElementById('imagePreview');
+    const file = event.target.files[0];
 
-  regionSelect.appendChild(option); // Añade la opción al select
-});
-
-function previewImage(event) {
-  const imagePreview = document.getElementById('imagePreview');
-  const file = event.target.files[0]; // Obtener el primer archivo seleccionado
-
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      imagePreview.src = e.target.result; // Cambiar la fuente a la imagen seleccionada
-    };
-    reader.readAsDataURL(file); // Leer la imagen como URL de datos
-  } else {
-    imagePreview.src = '../SOURCE/AlienLogo2.png'; // Volver a la imagen predeterminada si no hay archivo
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        imagePreview.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      imagePreview.src = '../SOURCE/AlienLogo2.png';
+    }
   }
-}
 
-function inicializarImagen() {
-  const imagePreview = document.getElementById('imagePreview');
-  const usuario = instanciaUnica.obtenerUsuarioLoggeado()
-  if (usuario.imagen) {
-    imagePreview.src = usuario.imagen; // Si hay imagen del usuario, mostrarla
-  } else {
-    imagePreview.src = '../SOURCE/AlienLogo2.png'; // De lo contrario, mostrar la imagen predeterminada
+  function inicializarImagen() {
+    const imagePreview = document.getElementById('imagePreview');
+    const usuario = instanciaUnica.obtenerUsuarioLoggeado()
+    if (usuario.imagen) {
+      imagePreview.src = usuario.imagen;
+    } else {
+      imagePreview.src = '../SOURCE/AlienLogo2.png';
+    }
   }
-}
-inicializarImagen()
-
+  inicializarImagen()
 });

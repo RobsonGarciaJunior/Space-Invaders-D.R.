@@ -1,4 +1,4 @@
-import { Usuario } from "./usuario.js"; // Importar la clase Usuario
+import { Usuario } from "./usuario.js";
 
 export class GestorUsuarios {
 
@@ -184,7 +184,6 @@ export class GestorUsuarios {
       }
       return { status: "success", message: "Usuario modificado correctamente" };
 
-      //   // Recargar la página para reflejar los cambios
     } else {
       console.error("Usuario no encontrado.");
     }

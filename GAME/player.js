@@ -32,7 +32,6 @@ window.addEventListener("keydown", (event) => {
       moveDownKey = true;
       break;
     default:
-    // logToConsole(`Tecla no asignada: ${key}`);
   }
 });
 

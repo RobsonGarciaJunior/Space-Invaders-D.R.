@@ -1,21 +1,15 @@
 .missile {
     position: absolute;
     width: 30px;
-    /* Width of the missile */
     height: 30px;
-    /* Height of the missile */
     background-image: url('../SOURCE/shoot.png');
     background-size: cover;
     background-repeat: no-repeat;
-    /* Color of the missile */
 }
 
 @media (max-width: 600px) {
-
     .missile {
         width: 15px;
-        /* Width of the missile */
         height: 15px;
-        /* Height of the missile */
     }
 }

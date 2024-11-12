@@ -1,52 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Space Invaders</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="../UTILS/BODY/body.css" />
-    <link rel="stylesheet" href="../UTILS/NAVBAR/navbar.css" />
-    <link rel="stylesheet" href="../UTILS/FOOTER/footer.css" />
-    <link rel="icon" href="../SOURCE/AlienLogo2.png" type="image/png" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
-      crossorigin="anonymous"
-    />
-    <script src="https://kit.fontawesome.com/553316a723.js" crossorigin="anonymous"></script>
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="../UTILS/BODY/body.css" />
+  <link rel="stylesheet" href="../UTILS/NAVBAR/navbar.css" />
+  <link rel="stylesheet" href="../UTILS/FOOTER/footer.css" />
+  <link rel="icon" href="../SOURCE/AlienLogo2.png" type="image/png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/553316a723.js" crossorigin="anonymous"></script>
 
-  <body>
-    <div class="container">
-      <!-- Header -->
-      <header>
-        <div id="navbar"></div>
-        <script type="module" src="../UTILS/NAVBAR/navbar.js"></script>
-      </header>
-      <!-- Body -->
-      <div class="main">
-        <div class="gameImg">
-          <img src="../SOURCE/AlienLogo2.png" alt="logoImage" />
-        </div>
-        <div class="buttonGroup">
-          <a href="../LOGIN/login.html" class="sessionButton" id="login"
-            >Iniciar Sesión</a
-          >
-          <a href="../GAME/game.html" class="sessionButton" id="jugar">Jugar</a>
-          <a
-            href="../PROFILE/profile.html?source=register"
-            class="sessionButton"
-            id="profile"
-            >Registrarse</a
-          >
-        </div>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div id="navbar"></div>
+      <script type="module" src="../UTILS/NAVBAR/navbar.js"></script>
+    </header>
+    <div class="main">
+      <div class="gameImg">
+        <img src="../SOURCE/AlienLogo2.png" alt="logoImage" />
       </div>
-      <footer id="footer">
-        <script src="../UTILS/FOOTER/footer.js"></script>
-      </footer>
+      <div class="buttonGroup">
+        <a href="../LOGIN/login.html" class="sessionButton" id="login">Iniciar Sesión</a>
+        <a href="../GAME/game.html" class="sessionButton" id="jugar">Jugar</a>
+        <a href="../PROFILE/profile.html?source=register" class="sessionButton" id="profile">Registrarse</a>
+      </div>
     </div>
-    <script type="module" src="index.js"></script>
-  </body>
+    <footer id="footer">
+      <script src="../UTILS/FOOTER/footer.js"></script>
+    </footer>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
 </html>
