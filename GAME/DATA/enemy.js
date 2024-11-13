@@ -36,9 +36,6 @@ class Enemy extends Observable {
     this.x = this.gameArea.offsetWidth;
     this.y = 0; // Siempre en la parte superior
 
-    // Colocar el enemigo en una posición aleatoria dentro de la nave nodriza
-    this.x = mothershipRect.left + Math.random() * mothershipRect.width;
-    this.y = mothershipRect.top + Math.random() * mothershipRect.height;
     enemy.style.position = "absolute"; // Asegurarse de que esté posicionado absolutamente
     enemy.style.left = this.x + "px";
     enemy.style.top = this.y + "px";
